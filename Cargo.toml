@@ -4,4 +4,5 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
-bevy = { version = "0.16.0", default-features = false, features = ["bevy_winit", "bevy_render", "bevy_asset", "bevy_sprite", "png"] }
+bevy = { version = "0.16.0" }
+bevy_svg = { version = "0.16.0-rc1", default-features = false, features = ["2d","3d"] }
