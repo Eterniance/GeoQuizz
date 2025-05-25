@@ -8,6 +8,7 @@ pub struct MapPlugin;
 
 impl Plugin for MapPlugin {
     fn build(&self, app: &mut App) {
+        app.insert_resource(ClearColor(Color::hsv(1.0, 0.0, 0.80)));
         app.add_plugins(DefaultPlugins.set(WindowPlugin {
             primary_window: Some(Window {
                 title: "GeoQuizz Belgium".to_string(),
@@ -17,7 +18,7 @@ impl Plugin for MapPlugin {
         }));
         app.add_plugins(SvgPlugin);
         app.add_systems(Startup, setup);
-        app.add_systems(Update, camera_zoom_system);
+        // app.add_systems(Update, camera_zoom_system);
     }
 }
 
