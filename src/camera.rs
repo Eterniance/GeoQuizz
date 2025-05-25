@@ -1,9 +1,8 @@
 use crate::{MouseScrollUnit, MouseWheel};
+use bevy::core_pipeline::core_2d::Camera2d;
 use bevy::prelude::*;
 use bevy_svg::prelude::*;
-use bevy::core_pipeline::core_2d::Camera2d;
 // use bevy::sprite::{Wireframe2dConfig, Wireframe2dPlugin};
-
 
 pub struct MapPlugin;
 
@@ -22,11 +21,7 @@ impl Plugin for MapPlugin {
     }
 }
 
-
-fn setup(
-    mut commands: Commands,
-    asset_server: Res<AssetServer>,
-) {
+fn setup(mut commands: Commands, asset_server: Res<AssetServer>) {
     let svg = asset_server.load("belgium_map.svg");
     commands.spawn((Camera2d::default(), Msaa::Sample4));
     commands.spawn((
@@ -34,7 +29,6 @@ fn setup(
         Origin::Center, // Origin::TopLeft is the default
     ));
 }
-
 
 pub fn camera_zoom_system(
     mut evr_scroll: EventReader<MouseWheel>,

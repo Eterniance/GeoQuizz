@@ -1,16 +1,14 @@
 mod camera;
 
+use bevy::input::mouse::{MouseButtonInput, MouseScrollUnit, MouseWheel};
 use bevy::prelude::*;
-use bevy::input::{gestures::*,
-        mouse::{MouseButtonInput, MouseScrollUnit, MouseWheel}};
-
 
 // mod game;
 
 fn main() {
     App::new()
+        .add_plugins(SetupPlugin)
         .add_plugins(camera::MapPlugin)
-        .add_plugins(HelloPlugin)
         .run();
 }
 
@@ -31,31 +29,38 @@ struct BundleCity {
 }
 
 #[derive(Component, Debug)]
-enum Guess {
+pub enum GuessType {
     Name(String),
     Location(Vec2),
 }
 
 #[derive(Resource)]
-struct GreetTimer(Timer);
+pub struct GuessAssets {
+    pub mesh: Handle<Mesh>,
+    pub material: Handle<ColorMaterial>,
+}
+
+fn setup_guess_assets(
+    mut commands: Commands,
+    mut meshes: ResMut<Assets<Mesh>>,
+    mut materials: ResMut<Assets<ColorMaterial>>,
+) {
+    let mesh = meshes.add(Circle::new(2.5));
+    let material = materials.add(Color::WHITE);
+
+    commands.insert_resource(GuessAssets { mesh, material });
+}
+
 
 #[derive(Resource)]
 struct LocTimer(Timer);
 
 fn add_city(mut commands: Commands) {
-    commands.spawn(BundleCity{
+    commands.spawn(BundleCity {
         city: City,
         name: Name("Soignies".to_string()),
         loc: Location(Vec2::new(0.0, 0.0)),
     });
-}
-
-fn greet_city(time: Res<Time>, mut timer: ResMut<GreetTimer>, query: Query<&Name, With<City>>) {
-    if timer.0.tick(time.delta()).just_finished() {
-        for name in &query {
-            println!("hello {:?}!", name.0);
-        }
-    }
 }
 
 fn find_city(time: Res<Time>, mut timer: ResMut<LocTimer>, query: Query<&Location, With<City>>) {
@@ -66,55 +71,72 @@ fn find_city(time: Res<Time>, mut timer: ResMut<LocTimer>, query: Query<&Locatio
     }
 }
 
-
-#[derive(Component)]
-struct GuessMarker;
-
 fn click_to_spawn_circle(
     mut commands: Commands,
     mut mouse_button_input_events: EventReader<MouseButtonInput>,
     windows: Query<&Window>,
     camera_q: Query<(&Camera, &GlobalTransform)>,
-    mut meshes: ResMut<Assets<Mesh>>,
-    mut materials: ResMut<Assets<ColorMaterial>>,
-    mut existing_circle_q: Query<(Entity, &mut Transform), With<GuessMarker>>,
+    guess_assets: Res<GuessAssets>,
+    mut existing_circle: Query<(Entity, &mut Transform), With<GuessType>>,
 ) {
     let window = windows.single().unwrap();
-
-    let circle = Mesh2d(meshes.add(Circle::new(2.5)));
     for event in mouse_button_input_events.read() {
         if event.button == MouseButton::Left && event.state.is_pressed() {
             if let Some(cursor_pos) = window.cursor_position() {
-                // Convert screen pos to world coordinates
-                let Ok((camera, camera_transform)) = camera_q.single() else { todo!() };
-                    if let Ok(world_pos) = camera.viewport_to_world_2d(camera_transform, cursor_pos) {
-                        if let Ok((_, mut transform)) = existing_circle_q.single_mut() {
-                            // Move the existing circle
-                            transform.translation = world_pos.extend(0.0);
-                        } else {
-                            commands.spawn((
-                                circle.clone(),
-                                MeshMaterial2d(materials.add(Color::WHITE)),
-                                Transform::from_translation(world_pos.extend(0.0)),
-                                GuessMarker,
+                let (camera, camera_transform) = camera_q.single().unwrap();
+                let world_pos = camera.viewport_to_world_2d(camera_transform, cursor_pos).unwrap();
+                    if let Ok((entity, mut transform)) = existing_circle.single_mut() {
+                        // Move the existing circle
+                        transform.translation = world_pos.extend(0.0);
+                        commands.entity(entity).insert(GuessType::Location(world_pos));
+                    } else {
+                        commands.spawn((
+                            Mesh2d(guess_assets.mesh.clone()),
+                            MeshMaterial2d(guess_assets.material.clone()),
+                            Transform::from_translation(world_pos.extend(0.0)),
+                            GuessType::Location(world_pos),
                         ));
                     }
-                } else {todo!()};
+                };
             };
+        }
+    }
+
+fn evaluate_guess(
+    keyboard_input: Res<ButtonInput<KeyCode>>,
+    guess_query: Query<&GuessType>,
+) {
+    if keyboard_input.just_pressed(KeyCode::Space) {
+        if let Ok(guess) = guess_query.single() {
+            match guess {
+                GuessType::Location(pos) => {
+                    println!("You guessed: {:?}", pos);
+                }
+                GuessType::Name(name) => todo!(),
+            }
+        } else {
+            println!("No guess has been made yet.");
         }
     }
 }
 
 
 
+pub struct SetupPlugin;
+
+impl Plugin for SetupPlugin {
+    fn build(&self, app: &mut App) {
+        app.add_systems(Startup, setup_guess_assets);
+        app.add_systems(Update, (click_to_spawn_circle, evaluate_guess));
+    }
+}
+
 pub struct HelloPlugin;
 
 impl Plugin for HelloPlugin {
     fn build(&self, app: &mut App) {
-        app.insert_resource(GreetTimer(Timer::from_seconds(2.0, TimerMode::Once)));
         app.insert_resource(LocTimer(Timer::from_seconds(1.0, TimerMode::Once)));
         app.add_systems(Startup, add_city);
-        app.add_systems(Update, (greet_city, find_city, click_to_spawn_circle));
+        app.add_systems(Update, (find_city, click_to_spawn_circle));
     }
 }
-
