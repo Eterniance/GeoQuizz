@@ -105,17 +105,21 @@ fn click_to_spawn_circle(
 fn evaluate_guess(
     keyboard_input: Res<ButtonInput<KeyCode>>,
     guess_query: Query<&GuessType>,
+    anwser_query: Query<(&Name, &Location), With<City>>,
 ) {
     if keyboard_input.just_pressed(KeyCode::Space) {
-        if let Ok(guess) = guess_query.single() {
-            match guess {
-                GuessType::Location(pos) => {
-                    println!("You guessed: {:?}", pos);
+        if let Ok( (true_name, true_loc) ) = anwser_query.single() {
+            if let Ok(guess) = guess_query.single() {
+                match guess {
+                    GuessType::Location(pos) => {
+                        let distance = pos.distance(true_loc.0);
+                        println!("{} is {:.1} a.u. away from your guess!", true_name.0, distance);
+                    }
+                    GuessType::Name(_) => todo!(),
                 }
-                GuessType::Name(name) => todo!(),
+            } else {
+                println!("No guess has been made yet.");
             }
-        } else {
-            println!("No guess has been made yet.");
         }
     }
 }
@@ -126,7 +130,7 @@ pub struct SetupPlugin;
 
 impl Plugin for SetupPlugin {
     fn build(&self, app: &mut App) {
-        app.add_systems(Startup, setup_guess_assets);
+        app.add_systems(Startup, (setup_guess_assets, add_city));
         app.add_systems(Update, (click_to_spawn_circle, evaluate_guess));
     }
 }
