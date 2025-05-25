@@ -1,16 +1,15 @@
+mod camera;
+
 use bevy::prelude::*;
 use bevy::input::{gestures::*,
         mouse::{MouseButtonInput, MouseScrollUnit, MouseWheel}};
-use bevy::core_pipeline::core_2d::Camera2d;
-// use bevy::sprite::{Wireframe2dConfig, Wireframe2dPlugin};
 
-use bevy_svg::prelude::*;
 
 // mod game;
 
 fn main() {
     App::new()
-        .add_plugins(MapPlugin)
+        .add_plugins(camera::MapPlugin)
         .add_plugins(HelloPlugin)
         .run();
 }
@@ -67,64 +66,9 @@ fn find_city(time: Res<Time>, mut timer: ResMut<LocTimer>, query: Query<&Locatio
     }
 }
 
-fn setup(
-    mut commands: Commands,
-    asset_server: Res<AssetServer>,
-) {
-    let svg = asset_server.load("belgium_map.svg");
-    commands.spawn((Camera2d::default(), Msaa::Sample4));
-    commands.spawn((
-        Svg2d(svg),
-        Origin::Center, // Origin::TopLeft is the default
-    ));
-}
 
-pub fn camera_zoom_system(
-    mut evr_scroll: EventReader<MouseWheel>,
-    mut camera: Query<(Option<Mut<Projection>>, Mut<Transform>), With<Camera>>,
-) {
-    for ev in evr_scroll.read() {
-        for (projection, mut transform) in camera.iter_mut() {
-            let amount = match ev.unit {
-                MouseScrollUnit::Line => ev.y,
-                MouseScrollUnit::Pixel => ev.y,
-            };
-            if let Some(mut projection) = projection {
-                if let Projection::Orthographic(ref mut projection) = *projection {
-                    projection.scale -= if projection.scale <= 1.0 {
-                        amount * 0.05
-                    } else {
-                        amount
-                    };
-                    projection.scale = projection.scale.clamp(0.01, 10.0);
-                }
-            } else {
-                transform.translation.z -= amount;
-            }
-        }
-    }
-}
-
-
-
-
-// fn click_in_window(
-//     mut mouse_button_input_events: EventReader<MouseButtonInput>,
-//     windows: Query<&Window>,
-// ) {
-//     let window = windows.get_single().unwrap(); // assumes one window
-
-//     for event in mouse_button_input_events.read() {
-//         if event.button == MouseButton::Left && event.state.is_pressed() {
-//             if let Some(position) = window.cursor_position() {
-//                 println!("Clicked at position: {:?}", position);
-
-//             } else {
-//                 println!("Clicked, but cursor was outside of the window.");
-//             }
-//         }
-//     }
-// }
+#[derive(Component)]
+struct GuessMarker;
 
 fn click_to_spawn_circle(
     mut commands: Commands,
@@ -133,30 +77,34 @@ fn click_to_spawn_circle(
     camera_q: Query<(&Camera, &GlobalTransform)>,
     mut meshes: ResMut<Assets<Mesh>>,
     mut materials: ResMut<Assets<ColorMaterial>>,
+    mut existing_circle_q: Query<(Entity, &mut Transform), With<GuessMarker>>,
 ) {
-    let window = windows.get_single().unwrap();
+    let window = windows.single().unwrap();
 
     let circle = Mesh2d(meshes.add(Circle::new(2.5)));
     for event in mouse_button_input_events.read() {
         if event.button == MouseButton::Left && event.state.is_pressed() {
-            if let Some(screen_pos) = window.cursor_position() {
+            if let Some(cursor_pos) = window.cursor_position() {
                 // Convert screen pos to world coordinates
                 let Ok((camera, camera_transform)) = camera_q.single() else { todo!() };
-                if let Ok(world_pos) = camera.viewport_to_world_2d(camera_transform, screen_pos) {
-                    // Spawn a tiny white circle at the world position
-                    commands.spawn((
-                        circle.clone(),
-                        MeshMaterial2d(materials.add(Color::WHITE)),
-                        Transform::from_translation(world_pos.extend(0.0)),
-                    ));
-                }
-                else {
-                    todo!()
-                };
-            }
+                    if let Ok(world_pos) = camera.viewport_to_world_2d(camera_transform, cursor_pos) {
+                        if let Ok((_, mut transform)) = existing_circle_q.single_mut() {
+                            // Move the existing circle
+                            transform.translation = world_pos.extend(0.0);
+                        } else {
+                            commands.spawn((
+                                circle.clone(),
+                                MeshMaterial2d(materials.add(Color::WHITE)),
+                                Transform::from_translation(world_pos.extend(0.0)),
+                                GuessMarker,
+                        ));
+                    }
+                } else {todo!()};
+            };
         }
     }
 }
+
 
 
 pub struct HelloPlugin;
@@ -170,19 +118,3 @@ impl Plugin for HelloPlugin {
     }
 }
 
-pub struct MapPlugin;
-
-impl Plugin for MapPlugin {
-    fn build(&self, app: &mut App) {
-        app.add_plugins(DefaultPlugins.set(WindowPlugin {
-            primary_window: Some(Window {
-                title: "GeoQuizz Belgium".to_string(),
-                ..Default::default()
-            }),
-            ..Default::default()
-        }));
-        app.add_plugins(bevy_svg::prelude::SvgPlugin);
-        app.add_systems(Startup, setup);
-        app.add_systems(Update, camera_zoom_system);
-    }
-}
