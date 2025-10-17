@@ -1,5 +1,5 @@
-use crate::{MouseScrollUnit, MouseWheel};
 use bevy::core_pipeline::core_2d::Camera2d;
+use bevy::input::mouse::{MouseScrollUnit, MouseWheel};
 use bevy::prelude::*;
 use bevy_svg::prelude::*;
 // use bevy::sprite::{Wireframe2dConfig, Wireframe2dPlugin};
@@ -24,7 +24,7 @@ impl Plugin for MapPlugin {
 
 fn setup(mut commands: Commands, asset_server: Res<AssetServer>) {
     let svg = asset_server.load("belgium_map.svg");
-    commands.spawn((Camera2d::default(), Msaa::Sample4));
+    commands.spawn((Camera2d, Msaa::Sample4));
     commands.spawn((
         Svg2d(svg),
         Origin::Center, // Origin::TopLeft is the default

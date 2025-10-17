@@ -1,31 +1,15 @@
-mod camera;
-
-use bevy::input::mouse::{MouseButtonInput, MouseScrollUnit, MouseWheel};
+use bevy::input::mouse::MouseButtonInput;
 use bevy::prelude::*;
 use bevy_svg::prelude::Origin;
-// mod game;
+use geo_quizz::{camera, load_database};
+
+use geo_quizz::types::{BundleCity, City, Location, Name};
 
 fn main() {
     App::new()
         .add_plugins(SetupPlugin)
         .add_plugins(camera::MapPlugin)
         .run();
-}
-
-#[derive(Component, Debug)]
-struct Name(String);
-
-#[derive(Component, Debug)]
-struct Location(Vec2);
-
-#[derive(Component, Debug)]
-struct City;
-
-#[derive(Bundle, Debug)]
-struct BundleCity {
-    city: City,
-    name: Name,
-    loc: Location,
 }
 
 #[derive(Component, Debug)]
@@ -71,6 +55,9 @@ fn setup_city_assets(
 struct LocTimer(Timer);
 
 fn add_city(mut commands: Commands) {
+    let path = std::path::Path::new(r"..\database\belgium_cities.json");
+    let db = load_database(path);
+    println!("{db:?}");
     commands.spawn(BundleCity {
         city: City,
         name: Name("Soignies".to_string()),
@@ -96,28 +83,29 @@ fn click_to_spawn_circle(
 ) {
     let window = windows.single().unwrap();
     for event in mouse_button_input_events.read() {
-        if event.button == MouseButton::Left && event.state.is_pressed() {
-            if let Some(cursor_pos) = window.cursor_position() {
-                let (camera, camera_transform) = camera_q.single().unwrap();
-                let world_pos = camera
-                    .viewport_to_world_2d(camera_transform, cursor_pos)
-                    .unwrap();
-                println!("Click at {:?}", world_pos);
-                if let Ok((entity, mut transform)) = existing_circle.single_mut() {
-                    // Move the existing circle
-                    transform.translation = world_pos.extend(0.0);
-                    commands
-                        .entity(entity)
-                        .insert(GuessType::Location(world_pos));
-                } else {
-                    commands.spawn((
-                        Mesh2d(guess_assets.mesh.clone()),
-                        MeshMaterial2d(guess_assets.material.clone()),
-                        Transform::from_translation(world_pos.extend(0.0)),
-                        GuessType::Location(world_pos),
-                    ));
-                }
-            };
+        if event.button == MouseButton::Left
+            && event.state.is_pressed()
+            && let Some(cursor_pos) = window.cursor_position()
+        {
+            let (camera, camera_transform) = camera_q.single().unwrap();
+            let world_pos = camera
+                .viewport_to_world_2d(camera_transform, cursor_pos)
+                .unwrap();
+            println!("Click at {:?}", world_pos);
+            if let Ok((entity, mut transform)) = existing_circle.single_mut() {
+                // Move the existing circle
+                transform.translation = world_pos.extend(0.0);
+                commands
+                    .entity(entity)
+                    .insert(GuessType::Location(world_pos));
+            } else {
+                commands.spawn((
+                    Mesh2d(guess_assets.mesh.clone()),
+                    MeshMaterial2d(guess_assets.material.clone()),
+                    Transform::from_translation(world_pos.extend(0.0)),
+                    GuessType::Location(world_pos),
+                ));
+            }
         };
     }
 }
@@ -152,7 +140,7 @@ fn spawn_city_with_label(
 }
 
 fn evaluate_guess(
-    mut commands: Commands,
+    commands: Commands,
     keyboard_input: Res<ButtonInput<KeyCode>>,
     guess_query: Query<&GuessType>,
     anwser_query: Query<(Entity, &Name, &Location), With<City>>,
@@ -160,7 +148,7 @@ fn evaluate_guess(
     city_assets: Res<CityAssets>,
 ) {
     if keyboard_input.just_pressed(KeyCode::Space) {
-        if let Ok((entity, name_field, loc_field)) = anwser_query.single() {
+        if let Ok((_entity, name_field, loc_field)) = anwser_query.single() {
             let name = &name_field.0;
             let loc = loc_field.0;
             if let Ok(guess) = guess_query.single() {
