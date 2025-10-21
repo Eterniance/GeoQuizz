@@ -1,0 +1,2739 @@
+[
+  {
+    "name:default": "Charleroi",
+    "name:fr": "Charleroi",
+    "name:nl": "Charleroi",
+    "lat": 50.4116233,
+    "lon": 4.444528
+  },
+  {
+    "name:default": "Heverlee",
+    "name:fr": "Héverlé",
+    "name:nl": null,
+    "lat": 50.8645908,
+    "lon": 4.6937736
+  },
+  {
+    "name:default": "Oud-Heverlee",
+    "name:fr": "Vieux-Héverlé",
+    "name:nl": "Oud-Heverlee",
+    "lat": 50.8376275,
+    "lon": 4.6629253
+  },
+  {
+    "name:default": "Maasmechelen",
+    "name:fr": null,
+    "name:nl": "Maasmechelen",
+    "lat": 50.9634179,
+    "lon": 5.6960212
+  },
+  {
+    "name:default": "Saint-Gilles - Sint-Gillis",
+    "name:fr": "Saint-Gilles",
+    "name:nl": "Sint-Gillis",
+    "lat": 50.8249958,
+    "lon": 4.3454841
+  },
+  {
+    "name:default": "Etterbeek",
+    "name:fr": "Etterbeek",
+    "name:nl": "Etterbeek",
+    "lat": 50.8361447,
+    "lon": 4.3861737
+  },
+  {
+    "name:default": "Mortsel",
+    "name:fr": null,
+    "name:nl": "Mortsel",
+    "lat": 51.1704119,
+    "lon": 4.4566996
+  },
+  {
+    "name:default": "Borsbeek",
+    "name:fr": null,
+    "name:nl": "Borsbeek",
+    "lat": 51.1928907,
+    "lon": 4.488953
+  },
+  {
+    "name:default": "Andenne",
+    "name:fr": "Andenne",
+    "name:nl": "Andenne",
+    "lat": 50.4893981,
+    "lon": 5.0965468
+  },
+  {
+    "name:default": "Eghezée",
+    "name:fr": "Eghezée",
+    "name:nl": "Eghezée",
+    "lat": 50.591679,
+    "lon": 4.9065999
+  },
+  {
+    "name:default": "Marche-en-Famenne",
+    "name:fr": "Marche-en-Famenne",
+    "name:nl": null,
+    "lat": 50.2270943,
+    "lon": 5.3419568
+  },
+  {
+    "name:default": "Jambes",
+    "name:fr": "Jambes",
+    "name:nl": null,
+    "lat": 50.4589561,
+    "lon": 4.8723252
+  },
+  {
+    "name:default": "Lier",
+    "name:fr": "Lierre",
+    "name:nl": "Lier",
+    "lat": 51.131069,
+    "lon": 4.5696516
+  },
+  {
+    "name:default": "Nijlen",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 51.1610023,
+    "lon": 4.6702859
+  },
+  {
+    "name:default": "Heist-op-den-Berg",
+    "name:fr": "Heist-sur-la-Montagne",
+    "name:nl": "Heist-op-den-Berg",
+    "lat": 51.0759905,
+    "lon": 4.7286753
+  },
+  {
+    "name:default": "Lessines",
+    "name:fr": "Lessines",
+    "name:nl": "Lessen",
+    "lat": 50.7123036,
+    "lon": 3.8301131
+  },
+  {
+    "name:default": "Herenthout",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 51.1392427,
+    "lon": 4.7543972
+  },
+  {
+    "name:default": "Turnhout",
+    "name:fr": null,
+    "name:nl": "Turnhout",
+    "lat": 51.3233812,
+    "lon": 4.948461
+  },
+  {
+    "name:default": "Berlaar",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 51.1179047,
+    "lon": 4.6575109
+  },
+  {
+    "name:default": "Kapelle-op-den-Bos",
+    "name:fr": "Kapelle-op-den-Bos",
+    "name:nl": "Kapelle-op-den-Bos",
+    "lat": 51.0131904,
+    "lon": 4.3599725
+  },
+  {
+    "name:default": "Staden",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 50.9747148,
+    "lon": 3.0145726
+  },
+  {
+    "name:default": "Bonheiden",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 51.0253242,
+    "lon": 4.5483885
+  },
+  {
+    "name:default": "Ath",
+    "name:fr": "Ath",
+    "name:nl": "Aat",
+    "lat": 50.6311349,
+    "lon": 3.7769485
+  },
+  {
+    "name:default": "Sint-Katelijne-Waver",
+    "name:fr": "Wavre-Sainte-Catherine",
+    "name:nl": "Sint-Katelijne-Waver",
+    "lat": 51.0699542,
+    "lon": 4.532238
+  },
+  {
+    "name:default": "Leuze-en-Hainaut",
+    "name:fr": "Leuze-en-Hainaut",
+    "name:nl": null,
+    "lat": 50.6005326,
+    "lon": 3.6214536
+  },
+  {
+    "name:default": "Tournai",
+    "name:fr": "Tournai",
+    "name:nl": "Doornik",
+    "lat": 50.6056458,
+    "lon": 3.3878179
+  },
+  {
+    "name:default": "Arendonk",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 51.3202315,
+    "lon": 5.0864557
+  },
+  {
+    "name:default": "Beveren",
+    "name:fr": null,
+    "name:nl": "Beveren",
+    "lat": 51.212611,
+    "lon": 4.2577808
+  },
+  {
+    "name:default": "Genappe",
+    "name:fr": "Genappe",
+    "name:nl": "Genepiën",
+    "lat": 50.6108733,
+    "lon": 4.4510726
+  },
+  {
+    "name:default": "Zaventem",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 50.8806207,
+    "lon": 4.4730008
+  },
+  {
+    "name:default": "Kortenberg",
+    "name:fr": "Cortenbergh",
+    "name:nl": "Kortenberg",
+    "lat": 50.8858727,
+    "lon": 4.5390678
+  },
+  {
+    "name:default": "Bertem",
+    "name:fr": null,
+    "name:nl": "Bertem",
+    "lat": 50.8659846,
+    "lon": 4.6306262
+  },
+  {
+    "name:default": "Louvain-la-Neuve",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 50.6682012,
+    "lon": 4.6128839
+  },
+  {
+    "name:default": "Wavre",
+    "name:fr": "Wavre",
+    "name:nl": "Waver",
+    "lat": 50.7169694,
+    "lon": 4.610416
+  },
+  {
+    "name:default": "Nivelles",
+    "name:fr": "Nivelles",
+    "name:nl": "Nijvel",
+    "lat": 50.5976885,
+    "lon": 4.3235854
+  },
+  {
+    "name:default": "Huy",
+    "name:fr": "Huy",
+    "name:nl": "Hoei",
+    "lat": 50.5180856,
+    "lon": 5.2408138
+  },
+  {
+    "name:default": "Gembloux",
+    "name:fr": "Gembloux",
+    "name:nl": "Gembloers",
+    "lat": 50.5597273,
+    "lon": 4.6943126
+  },
+  {
+    "name:default": "Couvin",
+    "name:fr": "Couvin",
+    "name:nl": "Couvin",
+    "lat": 50.0524906,
+    "lon": 4.4955009
+  },
+  {
+    "name:default": "Philippeville",
+    "name:fr": "Philippeville",
+    "name:nl": "Philippeville",
+    "lat": 50.196268,
+    "lon": 4.5436078
+  },
+  {
+    "name:default": "Hasselt",
+    "name:fr": null,
+    "name:nl": "Hasselt",
+    "lat": 50.9303735,
+    "lon": 5.3378043
+  },
+  {
+    "name:default": "Tubize",
+    "name:fr": "Tubize",
+    "name:nl": "Tubeke",
+    "lat": 50.69302,
+    "lon": 4.204696
+  },
+  {
+    "name:default": "Enghien - Edingen",
+    "name:fr": "Enghien",
+    "name:nl": "Edingen",
+    "lat": 50.6957066,
+    "lon": 4.0411928
+  },
+  {
+    "name:default": "Arlon",
+    "name:fr": "Arlon",
+    "name:nl": "Aarlen",
+    "lat": 49.6834601,
+    "lon": 5.8167711
+  },
+  {
+    "name:default": "Kalmthout",
+    "name:fr": "Calmpthout",
+    "name:nl": "Kalmthout",
+    "lat": 51.3832723,
+    "lon": 4.4763255
+  },
+  {
+    "name:default": "Aarschot",
+    "name:fr": "Aerschot",
+    "name:nl": "Aarschot",
+    "lat": 50.9842743,
+    "lon": 4.836429
+  },
+  {
+    "name:default": "Beaumont",
+    "name:fr": "Beaumont",
+    "name:nl": null,
+    "lat": 50.2355294,
+    "lon": 4.2383115
+  },
+  {
+    "name:default": "Beringen",
+    "name:fr": "Béringue",
+    "name:nl": "Beringen",
+    "lat": 51.0489641,
+    "lon": 5.2266869
+  },
+  {
+    "name:default": "Bilzen",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 50.8707787,
+    "lon": 5.5181089
+  },
+  {
+    "name:default": "Blankenberge",
+    "name:fr": "Blankenberghe",
+    "name:nl": "Blankenberge",
+    "lat": 51.3112589,
+    "lon": 3.1323429
+  },
+  {
+    "name:default": "Bouillon",
+    "name:fr": "Bouillon",
+    "name:nl": null,
+    "lat": 49.7949836,
+    "lon": 5.0672528
+  },
+  {
+    "name:default": "Bree",
+    "name:fr": "Brée",
+    "name:nl": "Bree",
+    "lat": 51.1417984,
+    "lon": 5.5985009
+  },
+  {
+    "name:default": "Châtelet",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 50.4046075,
+    "lon": 4.5243511
+  },
+  {
+    "name:default": "Chimay",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 50.0479266,
+    "lon": 4.3173338
+  },
+  {
+    "name:default": "Ciney",
+    "name:fr": "Ciney",
+    "name:nl": "Ciney",
+    "lat": 50.2964911,
+    "lon": 5.1008664
+  },
+  {
+    "name:default": "Deinze",
+    "name:fr": null,
+    "name:nl": "Deinze",
+    "lat": 50.9840526,
+    "lon": 3.5274017
+  },
+  {
+    "name:default": "Diest",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 50.9844318,
+    "lon": 5.0504341
+  },
+  {
+    "name:default": "Eeklo",
+    "name:fr": null,
+    "name:nl": "Eeklo",
+    "lat": 51.1844827,
+    "lon": 3.5665965
+  },
+  {
+    "name:default": "Eupen",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 50.6305665,
+    "lon": 6.0312717
+  },
+  {
+    "name:default": "Fleurus",
+    "name:fr": "Fleurus",
+    "name:nl": null,
+    "lat": 50.482944,
+    "lon": 4.549699
+  },
+  {
+    "name:default": "Florenville",
+    "name:fr": "Florenville",
+    "name:nl": null,
+    "lat": 49.6993182,
+    "lon": 5.3100518
+  },
+  {
+    "name:default": "Fontaine-l'Évêque",
+    "name:fr": "Fontaine-l'Évêque",
+    "name:nl": null,
+    "lat": 50.4107021,
+    "lon": 4.3247583
+  },
+  {
+    "name:default": "Fosses-la-Ville",
+    "name:fr": null,
+    "name:nl": "Fosses-la-Ville",
+    "lat": 50.3959512,
+    "lon": 4.6978935
+  },
+  {
+    "name:default": "Gistel",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 51.1542785,
+    "lon": 2.961541
+  },
+  {
+    "name:default": "Halen",
+    "name:fr": "Halen",
+    "name:nl": "Halen",
+    "lat": 50.9479352,
+    "lon": 5.1142517
+  },
+  {
+    "name:default": "Hannut",
+    "name:fr": "Hannut",
+    "name:nl": "Hannuit",
+    "lat": 50.6724649,
+    "lon": 5.0779916
+  },
+  {
+    "name:default": "Harelbeke",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 50.857512,
+    "lon": 3.3113699
+  },
+  {
+    "name:default": "Herentals",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 51.1765426,
+    "lon": 4.8362595
+  },
+  {
+    "name:default": "Herve",
+    "name:fr": "Herve",
+    "name:nl": null,
+    "lat": 50.63916,
+    "lon": 5.7931012
+  },
+  {
+    "name:default": "Hoogstraten",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 51.4012894,
+    "lon": 4.7616865
+  },
+  {
+    "name:default": "Houffalize",
+    "name:fr": "Houffalize",
+    "name:nl": null,
+    "lat": 50.1323761,
+    "lon": 5.7886928
+  },
+  {
+    "name:default": "Izegem",
+    "name:fr": "Iseghem",
+    "name:nl": "Izegem",
+    "lat": 50.9198305,
+    "lon": 3.215435
+  },
+  {
+    "name:default": "Jodoigne",
+    "name:fr": null,
+    "name:nl": "Geldenaken",
+    "lat": 50.724179,
+    "lon": 4.8679997
+  },
+  {
+    "name:default": "La Louvière",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 50.4793576,
+    "lon": 4.18563
+  },
+  {
+    "name:default": "Anderlecht",
+    "name:fr": "Anderlecht",
+    "name:nl": "Anderlecht",
+    "lat": 50.8390983,
+    "lon": 4.3296526
+  },
+  {
+    "name:default": "Saint-Josse-ten-Noode - Sint-Joost-ten-Node",
+    "name:fr": "Saint-Josse-ten-Noode",
+    "name:nl": "Sint-Joost-ten-Node",
+    "lat": 50.8498357,
+    "lon": 4.3745921
+  },
+  {
+    "name:default": "Schaerbeek - Schaarbeek",
+    "name:fr": "Schaerbeek",
+    "name:nl": "Schaarbeek",
+    "lat": 50.8676041,
+    "lon": 4.3737121
+  },
+  {
+    "name:default": "Ganshoren",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 50.8703273,
+    "lon": 4.307798
+  },
+  {
+    "name:default": "Koekelberg",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 50.8606042,
+    "lon": 4.3315503
+  },
+  {
+    "name:default": "Berchem-Sainte-Agathe - Sint-Agatha-Berchem",
+    "name:fr": "Berchem-Sainte-Agathe",
+    "name:nl": "Sint-Agatha-Berchem",
+    "lat": 50.8649231,
+    "lon": 4.2946734
+  },
+  {
+    "name:default": "Molenbeek-Saint-Jean - Sint-Jans-Molenbeek",
+    "name:fr": "Molenbeek-Saint-Jean",
+    "name:nl": "Sint-Jans-Molenbeek",
+    "lat": 50.8545959,
+    "lon": 4.338636
+  },
+  {
+    "name:default": "Forest - Vorst",
+    "name:fr": "Forest",
+    "name:nl": "Vorst",
+    "lat": 50.811795,
+    "lon": 4.3181187
+  },
+  {
+    "name:default": "Uccle - Ukkel",
+    "name:fr": "Uccle",
+    "name:nl": "Ukkel",
+    "lat": 50.8035441,
+    "lon": 4.3338445
+  },
+  {
+    "name:default": "Ixelles - Elsene",
+    "name:fr": "Ixelles",
+    "name:nl": "Elsene",
+    "lat": 50.8331141,
+    "lon": 4.3668279
+  },
+  {
+    "name:default": "Watermael-Boitsfort - Watermaal-Bosvoorde",
+    "name:fr": "Watermael-Boitsfort",
+    "name:nl": "Watermaal-Bosvoorde",
+    "lat": 50.7981063,
+    "lon": 4.4176441
+  },
+  {
+    "name:default": "Woluwe-Saint-Lambert - Sint-Lambrechts-Woluwe",
+    "name:fr": "Woluwe-Saint-Lambert",
+    "name:nl": "Sint-Lambrechts-Woluwe",
+    "lat": 50.8430448,
+    "lon": 4.4256732
+  },
+  {
+    "name:default": "Woluwe-Saint-Pierre - Sint-Pieters-Woluwe",
+    "name:fr": "Woluwe-Saint-Pierre",
+    "name:nl": "Sint-Pieters-Woluwe",
+    "lat": 50.8370253,
+    "lon": 4.4274636
+  },
+  {
+    "name:default": "Auderghem - Oudergem",
+    "name:fr": "Auderghem",
+    "name:nl": "Oudergem",
+    "lat": 50.8171712,
+    "lon": 4.4270852
+  },
+  {
+    "name:default": "Jette",
+    "name:fr": "Jette",
+    "name:nl": "Jette",
+    "lat": 50.8759585,
+    "lon": 4.3245702
+  },
+  {
+    "name:default": "Zwijndrecht",
+    "name:fr": null,
+    "name:nl": "Zwijndrecht",
+    "lat": 51.2185443,
+    "lon": 4.3302898
+  },
+  {
+    "name:default": "Zonnebeke",
+    "name:fr": null,
+    "name:nl": "Zonnebeke",
+    "lat": 50.8731885,
+    "lon": 2.9874678
+  },
+  {
+    "name:default": "Torhout",
+    "name:fr": "Thourout",
+    "name:nl": "Torhout",
+    "lat": 51.0647837,
+    "lon": 3.1016415
+  },
+  {
+    "name:default": "Tielt",
+    "name:fr": null,
+    "name:nl": "Tielt",
+    "lat": 51.0002939,
+    "lon": 3.3273362
+  },
+  {
+    "name:default": "Temse",
+    "name:fr": "Tamise",
+    "name:nl": "Temse",
+    "lat": 51.1253635,
+    "lon": 4.2133313
+  },
+  {
+    "name:default": "Edegem",
+    "name:fr": null,
+    "name:nl": "Edegem",
+    "lat": 51.1548066,
+    "lon": 4.4458312
+  },
+  {
+    "name:default": "La Roche-en-Ardenne",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 50.1815604,
+    "lon": 5.5759476
+  },
+  {
+    "name:default": "Landen",
+    "name:fr": null,
+    "name:nl": "Landen",
+    "lat": 50.7530146,
+    "lon": 5.0813154
+  },
+  {
+    "name:default": "Lommel",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 51.2305657,
+    "lon": 5.3076895
+  },
+  {
+    "name:default": "Lo-Reninge",
+    "name:fr": null,
+    "name:nl": "Lo-Reninge",
+    "lat": 50.9638066,
+    "lon": 2.7643391
+  },
+  {
+    "name:default": "Malmedy",
+    "name:fr": "Malmedy",
+    "name:nl": null,
+    "lat": 50.4265348,
+    "lon": 6.0276059
+  },
+  {
+    "name:default": "Neufchâteau",
+    "name:fr": "Neufchâteau",
+    "name:nl": null,
+    "lat": 49.8404652,
+    "lon": 5.4355333
+  },
+  {
+    "name:default": "Bredene",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 51.2408491,
+    "lon": 2.9647914
+  },
+  {
+    "name:default": "De Haan",
+    "name:fr": "Le Coq",
+    "name:nl": "De Haan",
+    "lat": 51.275083,
+    "lon": 3.03169
+  },
+  {
+    "name:default": "Knokke-Heist",
+    "name:fr": "Knocke-Heist",
+    "name:nl": "Knokke-Heist",
+    "lat": 51.3433866,
+    "lon": 3.2884738
+  },
+  {
+    "name:default": "Oudenburg",
+    "name:fr": "Audembourg",
+    "name:nl": null,
+    "lat": 51.1841877,
+    "lon": 3.0049405
+  },
+  {
+    "name:default": "Peer",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 51.1319137,
+    "lon": 5.4546268
+  },
+  {
+    "name:default": "Péruwelz",
+    "name:fr": "Péruwelz",
+    "name:nl": null,
+    "lat": 50.5079857,
+    "lon": 3.5908805
+  },
+  {
+    "name:default": "Poperinge",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 50.8556646,
+    "lon": 2.7264961
+  },
+  {
+    "name:default": "Rochefort",
+    "name:fr": "Rochefort",
+    "name:nl": "Rochefort",
+    "lat": 50.1588503,
+    "lon": 5.2233447
+  },
+  {
+    "name:default": "Saint-Ghislain",
+    "name:fr": "Saint-Ghislain",
+    "name:nl": null,
+    "lat": 50.4477484,
+    "lon": 3.8195241
+  },
+  {
+    "name:default": "Saint-Hubert",
+    "name:fr": "Saint-Hubert",
+    "name:nl": null,
+    "lat": 50.0251428,
+    "lon": 5.3738561
+  },
+  {
+    "name:default": "Seraing",
+    "name:fr": "Seraing",
+    "name:nl": null,
+    "lat": 50.6152381,
+    "lon": 5.5089437
+  },
+  {
+    "name:default": "Soignies",
+    "name:fr": "Soignies",
+    "name:nl": "Zinnik",
+    "lat": 50.579203,
+    "lon": 4.0685604
+  },
+  {
+    "name:default": "Spa",
+    "name:fr": "Spa",
+    "name:nl": null,
+    "lat": 50.4920654,
+    "lon": 5.8627569
+  },
+  {
+    "name:default": "Stavelot",
+    "name:fr": "Stavelot",
+    "name:nl": null,
+    "lat": 50.3942409,
+    "lon": 5.9310335
+  },
+  {
+    "name:default": "Thuin",
+    "name:fr": "Thuin",
+    "name:nl": null,
+    "lat": 50.3397445,
+    "lon": 4.2870475
+  },
+  {
+    "name:default": "Verviers",
+    "name:fr": "Verviers",
+    "name:nl": null,
+    "lat": 50.59324,
+    "lon": 5.867828
+  },
+  {
+    "name:default": "Virton",
+    "name:fr": "Virton",
+    "name:nl": null,
+    "lat": 49.5677263,
+    "lon": 5.5329559
+  },
+  {
+    "name:default": "Visé",
+    "name:fr": "Visé",
+    "name:nl": "Wezet",
+    "lat": 50.7347797,
+    "lon": 5.6936397
+  },
+  {
+    "name:default": "Walcourt",
+    "name:fr": null,
+    "name:nl": "Walcourt",
+    "lat": 50.2513997,
+    "lon": 4.4314089
+  },
+  {
+    "name:default": "Waregem",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 50.8868222,
+    "lon": 3.4323622
+  },
+  {
+    "name:default": "Waremme",
+    "name:fr": "Waremme",
+    "name:nl": "Borgworm",
+    "lat": 50.6976875,
+    "lon": 5.2546191
+  },
+  {
+    "name:default": "Wervik",
+    "name:fr": "Wervicq",
+    "name:nl": "Wervik",
+    "lat": 50.7782244,
+    "lon": 3.0439698
+  },
+  {
+    "name:default": "Herent",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 50.9029514,
+    "lon": 4.6728253
+  },
+  {
+    "name:default": "Duffel",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 51.0957176,
+    "lon": 4.5061988
+  },
+  {
+    "name:default": "Zonhoven",
+    "name:fr": null,
+    "name:nl": "Zonhoven",
+    "lat": 50.9909835,
+    "lon": 5.3677683
+  },
+  {
+    "name:default": "Theux",
+    "name:fr": "Theux",
+    "name:nl": null,
+    "lat": 50.5358359,
+    "lon": 5.8238359
+  },
+  {
+    "name:default": "Zele",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 51.0683621,
+    "lon": 4.0385864
+  },
+  {
+    "name:default": "Putte",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 51.0570823,
+    "lon": 4.6310473
+  },
+  {
+    "name:default": "Anzegem",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 50.8325437,
+    "lon": 3.478405
+  },
+  {
+    "name:default": "Ingelmunster",
+    "name:fr": null,
+    "name:nl": "Ingelmunster",
+    "lat": 50.9202812,
+    "lon": 3.2549979
+  },
+  {
+    "name:default": "Villers-la-Ville",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 50.5727285,
+    "lon": 4.5342675
+  },
+  {
+    "name:default": "Waterloo",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 50.7175395,
+    "lon": 4.3977588
+  },
+  {
+    "name:default": "Braine-l'Alleud",
+    "name:fr": "Braine-l'Alleud",
+    "name:nl": "Eigenbrakel",
+    "lat": 50.6828722,
+    "lon": 4.3692706
+  },
+  {
+    "name:default": "Les Bons Villers",
+    "name:fr": "Les Bons Villers",
+    "name:nl": null,
+    "lat": 50.5226424,
+    "lon": 4.4763492
+  },
+  {
+    "name:default": "La Hulpe",
+    "name:fr": "La Hulpe",
+    "name:nl": "Terhulpen",
+    "lat": 50.7313729,
+    "lon": 4.4893987
+  },
+  {
+    "name:default": "Rixensart",
+    "name:fr": "Rixensart",
+    "name:nl": null,
+    "lat": 50.7122566,
+    "lon": 4.5216218
+  },
+  {
+    "name:default": "Keerbergen",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 51.0037524,
+    "lon": 4.6290719
+  },
+  {
+    "name:default": "Boom",
+    "name:fr": null,
+    "name:nl": "Boom",
+    "lat": 51.0873789,
+    "lon": 4.3667216
+  },
+  {
+    "name:default": "Diepenbeek",
+    "name:fr": null,
+    "name:nl": "Diepenbeek",
+    "lat": 50.9078485,
+    "lon": 5.4200307
+  },
+  {
+    "name:default": "Leopoldsburg",
+    "name:fr": "Bourg-Léopold",
+    "name:nl": "Leopoldsburg",
+    "lat": 51.1193017,
+    "lon": 5.2627046
+  },
+  {
+    "name:default": "Écaussinnes",
+    "name:fr": "Écaussinnes",
+    "name:nl": null,
+    "lat": 50.5696827,
+    "lon": 4.1752861
+  },
+  {
+    "name:default": "Libramont-Chevigny",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 49.9156327,
+    "lon": 5.3762007
+  },
+  {
+    "name:default": "Lede",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 50.9662645,
+    "lon": 3.9775505
+  },
+  {
+    "name:default": "Kelmis - La Calamine",
+    "name:fr": "La Calamine",
+    "name:nl": "Kelmis",
+    "lat": 50.7154957,
+    "lon": 6.013341
+  },
+  {
+    "name:default": "Raeren",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 50.6761305,
+    "lon": 6.1108404
+  },
+  {
+    "name:default": "Wetteren",
+    "name:fr": null,
+    "name:nl": "Wetteren",
+    "lat": 51.0068804,
+    "lon": 3.8855494
+  },
+  {
+    "name:default": "Rijkevorsel",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 51.3503707,
+    "lon": 4.758514
+  },
+  {
+    "name:default": "Merksplas",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 51.3579924,
+    "lon": 4.8627355
+  },
+  {
+    "name:default": "Brecht",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 51.3484804,
+    "lon": 4.6398673
+  },
+  {
+    "name:default": "Boechout",
+    "name:fr": null,
+    "name:nl": "Boechout",
+    "lat": 51.1635604,
+    "lon": 4.4963921
+  },
+  {
+    "name:default": "Schoten",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 51.2516344,
+    "lon": 4.4980446
+  },
+  {
+    "name:default": "Brasschaat",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 51.2900693,
+    "lon": 4.4917295
+  },
+  {
+    "name:default": "Dilbeek",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 50.8480711,
+    "lon": 4.2662591
+  },
+  {
+    "name:default": "Ternat",
+    "name:fr": "Ternat",
+    "name:nl": "Ternat",
+    "lat": 50.8713392,
+    "lon": 4.1756966
+  },
+  {
+    "name:default": "Sint-Pieters-Leeuw",
+    "name:fr": "Leeuw-Saint-Pierre",
+    "name:nl": "Sint-Pieters-Leeuw",
+    "lat": 50.7800261,
+    "lon": 4.2443604
+  },
+  {
+    "name:default": "Mettet",
+    "name:fr": null,
+    "name:nl": "Mettet",
+    "lat": 50.3212094,
+    "lon": 4.6584949
+  },
+  {
+    "name:default": "Hoeilaart",
+    "name:fr": "Hoeilaert",
+    "name:nl": "Hoeilaart",
+    "lat": 50.7674846,
+    "lon": 4.474407
+  },
+  {
+    "name:default": "Tervuren",
+    "name:fr": "Tervuren",
+    "name:nl": "Tervuren",
+    "lat": 50.8241883,
+    "lon": 4.5138824
+  },
+  {
+    "name:default": "Kapellen",
+    "name:fr": null,
+    "name:nl": "Kapellen",
+    "lat": 51.3149455,
+    "lon": 4.4295354
+  },
+  {
+    "name:default": "Stabroek",
+    "name:fr": "Stabroek",
+    "name:nl": "Stabroek",
+    "lat": 51.3326535,
+    "lon": 4.3680664
+  },
+  {
+    "name:default": "Laarne",
+    "name:fr": "Laerne",
+    "name:nl": "Laarne",
+    "lat": 51.029657,
+    "lon": 3.8504738
+  },
+  {
+    "name:default": "Beerse",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 51.3191388,
+    "lon": 4.8564494
+  },
+  {
+    "name:default": "Haacht",
+    "name:fr": "Haecht",
+    "name:nl": "Haacht",
+    "lat": 50.9769474,
+    "lon": 4.6383121
+  },
+  {
+    "name:default": "Durbuy",
+    "name:fr": "Durbuy",
+    "name:nl": null,
+    "lat": 50.3524116,
+    "lon": 5.456248
+  },
+  {
+    "name:default": "Aywaille",
+    "name:fr": "Aywaille",
+    "name:nl": null,
+    "lat": 50.4758998,
+    "lon": 5.6763249
+  },
+  {
+    "name:default": "Amay",
+    "name:fr": "Amay",
+    "name:nl": null,
+    "lat": 50.5497761,
+    "lon": 5.3240992
+  },
+  {
+    "name:default": "Esneux",
+    "name:fr": "Esneux",
+    "name:nl": null,
+    "lat": 50.533588,
+    "lon": 5.5686219
+  },
+  {
+    "name:default": "Rumst",
+    "name:fr": null,
+    "name:nl": "Rumst",
+    "lat": 51.0792853,
+    "lon": 4.4240472
+  },
+  {
+    "name:default": "Willebroek",
+    "name:fr": "Willebroeck",
+    "name:nl": "Willebroek",
+    "lat": 51.0606816,
+    "lon": 4.3588917
+  },
+  {
+    "name:default": "Hemiksem",
+    "name:fr": null,
+    "name:nl": "Hemiksem",
+    "lat": 51.1430192,
+    "lon": 4.3409826
+  },
+  {
+    "name:default": "Kruibeke",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 51.1712275,
+    "lon": 4.3091107
+  },
+  {
+    "name:default": "Aartselaar",
+    "name:fr": "Aertselaer",
+    "name:nl": "Aartselaar",
+    "lat": 51.133297,
+    "lon": 4.3870241
+  },
+  {
+    "name:default": "Profondeville",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 50.3762043,
+    "lon": 4.8675024
+  },
+  {
+    "name:default": "Grimbergen",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 50.932458,
+    "lon": 4.3717863
+  },
+  {
+    "name:default": "Rotselaar",
+    "name:fr": "Rotselaer",
+    "name:nl": null,
+    "lat": 50.9514713,
+    "lon": 4.7094054
+  },
+  {
+    "name:default": "Meise",
+    "name:fr": "Meise",
+    "name:nl": "Meise",
+    "lat": 50.9341625,
+    "lon": 4.3287322
+  },
+  {
+    "name:default": "Asse",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 50.9094333,
+    "lon": 4.2015646
+  },
+  {
+    "name:default": "Opwijk",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 50.9690529,
+    "lon": 4.1896665
+  },
+  {
+    "name:default": "Gavere",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 50.9292335,
+    "lon": 3.6614192
+  },
+  {
+    "name:default": "Hamme",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 51.0977642,
+    "lon": 4.1377229
+  },
+  {
+    "name:default": "Zemst",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 50.9842166,
+    "lon": 4.4650814
+  },
+  {
+    "name:default": "Lebbeke",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 51.0004013,
+    "lon": 4.1307711
+  },
+  {
+    "name:default": "Aubange",
+    "name:fr": null,
+    "name:nl": "Aubange",
+    "lat": 49.5671953,
+    "lon": 5.8044993
+  },
+  {
+    "name:default": "Ranst",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 51.1897015,
+    "lon": 4.5633
+  },
+  {
+    "name:default": "Wommelgem",
+    "name:fr": "Wommelghem",
+    "name:nl": "Wommelgem",
+    "lat": 51.2031044,
+    "lon": 4.5238022
+  },
+  {
+    "name:default": "Essen",
+    "name:fr": "Essen",
+    "name:nl": "Essen",
+    "lat": 51.4679229,
+    "lon": 4.4698256
+  },
+  {
+    "name:default": "Assenede",
+    "name:fr": null,
+    "name:nl": "Assenede",
+    "lat": 51.2275942,
+    "lon": 3.7532864
+  },
+  {
+    "name:default": "Boortmeerbeek",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 50.9815937,
+    "lon": 4.5729262
+  },
+  {
+    "name:default": "Westerlo",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 51.086694,
+    "lon": 4.9168675
+  },
+  {
+    "name:default": "Affligem",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 50.9035063,
+    "lon": 4.1174675
+  },
+  {
+    "name:default": "Buggenhout",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 51.0152271,
+    "lon": 4.2022689
+  },
+  {
+    "name:default": "Tremelo",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 50.9919047,
+    "lon": 4.7040582
+  },
+  {
+    "name:default": "Ottignies-Louvain-la-Neuve",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 50.6654216,
+    "lon": 4.5674107
+  },
+  {
+    "name:default": "Court-Saint-Etienne",
+    "name:fr": "Court-Saint-Etienne",
+    "name:nl": null,
+    "lat": 50.6443208,
+    "lon": 4.5685766
+  },
+  {
+    "name:default": "Chaumont-Gistoux",
+    "name:fr": "Chaumont-Gistoux",
+    "name:nl": null,
+    "lat": 50.6839808,
+    "lon": 4.6974182
+  },
+  {
+    "name:default": "Grez-Doiceau",
+    "name:fr": "Grez-Doiceau",
+    "name:nl": "Graven",
+    "lat": 50.7386182,
+    "lon": 4.6962324
+  },
+  {
+    "name:default": "Beauvechain",
+    "name:fr": "Beauvechain",
+    "name:nl": "Bevekom",
+    "lat": 50.7808981,
+    "lon": 4.7717304
+  },
+  {
+    "name:default": "Orp-Jauche",
+    "name:fr": "Orp-Jauche",
+    "name:nl": null,
+    "lat": 50.7000697,
+    "lon": 4.9892189
+  },
+  {
+    "name:default": "Stekene",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 51.2062265,
+    "lon": 4.0396925
+  },
+  {
+    "name:default": "Lochristi",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 51.0968867,
+    "lon": 3.8355999
+  },
+  {
+    "name:default": "Machelen",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 50.9126722,
+    "lon": 4.4328991
+  },
+  {
+    "name:default": "Bocholt",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 51.172979,
+    "lon": 5.577577
+  },
+  {
+    "name:default": "Evere",
+    "name:fr": "Evere",
+    "name:nl": "Evere",
+    "lat": 50.8720096,
+    "lon": 4.4034182
+  },
+  {
+    "name:default": "Alken",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 50.8754731,
+    "lon": 5.3079873
+  },
+  {
+    "name:default": "Merelbeke",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 50.9942924,
+    "lon": 3.7459119
+  },
+  {
+    "name:default": "Steenokkerzeel",
+    "name:fr": null,
+    "name:nl": "Steenokkerzeel",
+    "lat": 50.9093488,
+    "lon": 4.5110471
+  },
+  {
+    "name:default": "Kampenhout",
+    "name:fr": "Campenhout",
+    "name:nl": null,
+    "lat": 50.9413315,
+    "lon": 4.5495668
+  },
+  {
+    "name:default": "Hoeselt",
+    "name:fr": null,
+    "name:nl": "Hoeselt",
+    "lat": 50.8500788,
+    "lon": 5.4865309
+  },
+  {
+    "name:default": "Pont-à-Celles",
+    "name:fr": "Pont-à-Celles",
+    "name:nl": null,
+    "lat": 50.5122563,
+    "lon": 4.3617367
+  },
+  {
+    "name:default": "Sprimont",
+    "name:fr": "Sprimont",
+    "name:nl": null,
+    "lat": 50.5055291,
+    "lon": 5.6617176
+  },
+  {
+    "name:default": "Courcelles",
+    "name:fr": "Courcelles",
+    "name:nl": null,
+    "lat": 50.4574699,
+    "lon": 4.376008
+  },
+  {
+    "name:default": "Gerpinnes",
+    "name:fr": "Gerpinnes",
+    "name:nl": null,
+    "lat": 50.3378166,
+    "lon": 4.5276771
+  },
+  {
+    "name:default": "Bornem",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 51.0953014,
+    "lon": 4.2341308
+  },
+  {
+    "name:default": "Gosselies",
+    "name:fr": "Gosselies",
+    "name:nl": null,
+    "lat": 50.4653846,
+    "lon": 4.4301757
+  },
+  {
+    "name:default": "Sint-Lievens-Houtem",
+    "name:fr": "Hautem-Saint-Liévin",
+    "name:nl": "Sint-Lievens-Houtem",
+    "lat": 50.9204857,
+    "lon": 3.8589196
+  },
+  {
+    "name:default": "Erpe-Mere",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 50.9226391,
+    "lon": 3.9459888
+  },
+  {
+    "name:default": "Wemmel",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 50.9087716,
+    "lon": 4.3034586
+  },
+  {
+    "name:default": "Oosterzele",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 50.9456388,
+    "lon": 3.8032713
+  },
+  {
+    "name:default": "Wezembeek-Oppem",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 50.8440554,
+    "lon": 4.4871796
+  },
+  {
+    "name:default": "Kraainem",
+    "name:fr": null,
+    "name:nl": "Kraainem",
+    "lat": 50.860961,
+    "lon": 4.4662618
+  },
+  {
+    "name:default": "Chapelle-lez-Herlaimont",
+    "name:fr": "Chapelle-lez-Herlaimont",
+    "name:nl": null,
+    "lat": 50.4713117,
+    "lon": 4.280504
+  },
+  {
+    "name:default": "Lubbeek",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 50.8815702,
+    "lon": 4.8416048
+  },
+  {
+    "name:default": "Wanze",
+    "name:fr": "Wanze",
+    "name:nl": null,
+    "lat": 50.5368559,
+    "lon": 5.2143865
+  },
+  {
+    "name:default": "Farciennes",
+    "name:fr": "Farciennes",
+    "name:nl": null,
+    "lat": 50.4318404,
+    "lon": 4.5465179
+  },
+  {
+    "name:default": "Fléron",
+    "name:fr": "Fléron",
+    "name:nl": null,
+    "lat": 50.6168354,
+    "lon": 5.6832219
+  },
+  {
+    "name:default": "Chaudfontaine",
+    "name:fr": "Chaudfontaine",
+    "name:nl": null,
+    "lat": 50.5847922,
+    "lon": 5.6469688
+  },
+  {
+    "name:default": "Overijse",
+    "name:fr": "Overijse",
+    "name:nl": "Overijse",
+    "lat": 50.7701622,
+    "lon": 4.5351806
+  },
+  {
+    "name:default": "Zoersel",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 51.2716725,
+    "lon": 4.7132557
+  },
+  {
+    "name:default": "Merchtem",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 50.9593636,
+    "lon": 4.2335677
+  },
+  {
+    "name:default": "Jupille-sur-Meuse",
+    "name:fr": "Jupille-sur-Meuse",
+    "name:nl": null,
+    "lat": 50.6431909,
+    "lon": 5.6301266
+  },
+  {
+    "name:default": "Begijnendijk",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 51.0194098,
+    "lon": 4.782145
+  },
+  {
+    "name:default": "Herselt",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 51.0535029,
+    "lon": 4.883265
+  },
+  {
+    "name:default": "Wuustwezel",
+    "name:fr": null,
+    "name:nl": "Wuustwezel",
+    "lat": 51.3920166,
+    "lon": 4.5990942
+  },
+  {
+    "name:default": "Zandhoven",
+    "name:fr": null,
+    "name:nl": "Zandhoven",
+    "lat": 51.2147918,
+    "lon": 4.6595103
+  },
+  {
+    "name:default": "Malle",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 51.2970123,
+    "lon": 4.6933094
+  },
+  {
+    "name:default": "Schilde",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 51.2388703,
+    "lon": 4.5814855
+  },
+  {
+    "name:default": "Tielt-Winge",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 50.9352867,
+    "lon": 4.9100433
+  },
+  {
+    "name:default": "Ham-sur-Heure-Nalinnes",
+    "name:fr": "Ham-sur-Heure-Nalinnes",
+    "name:nl": null,
+    "lat": 50.3171621,
+    "lon": 4.3803219
+  },
+  {
+    "name:default": "Binche",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 50.4103004,
+    "lon": 4.165163
+  },
+  {
+    "name:default": "Huldenberg",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 50.7892736,
+    "lon": 4.5833958
+  },
+  {
+    "name:default": "Seneffe",
+    "name:fr": "Seneffe",
+    "name:nl": null,
+    "lat": 50.5292555,
+    "lon": 4.2566988
+  },
+  {
+    "name:default": "Soumagne",
+    "name:fr": "Soumagne",
+    "name:nl": null,
+    "lat": 50.6147718,
+    "lon": 5.739941
+  },
+  {
+    "name:default": "Riemst",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 50.8115825,
+    "lon": 5.5978716
+  },
+  {
+    "name:default": "Saint-Nicolas",
+    "name:fr": "Saint-Nicolas",
+    "name:nl": null,
+    "lat": 50.6316662,
+    "lon": 5.5376342
+  },
+  {
+    "name:default": "Grivegnée",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 50.6192957,
+    "lon": 5.6047622
+  },
+  {
+    "name:default": "Londerzeel",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 51.0021194,
+    "lon": 4.3028049
+  },
+  {
+    "name:default": "Angleur",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 50.6128439,
+    "lon": 5.5953129
+  },
+  {
+    "name:default": "Morlanwelz",
+    "name:fr": "Morlanwelz",
+    "name:nl": null,
+    "lat": 50.4550743,
+    "lon": 4.2425425
+  },
+  {
+    "name:default": "Anderlues",
+    "name:fr": "Anderlues",
+    "name:nl": null,
+    "lat": 50.4078243,
+    "lon": 4.2700889
+  },
+  {
+    "name:default": "Liedekerke",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 50.8711313,
+    "lon": 4.0860754
+  },
+  {
+    "name:default": "Lobbes",
+    "name:fr": "Lobbes",
+    "name:nl": null,
+    "lat": 50.3460194,
+    "lon": 4.2654874
+  },
+  {
+    "name:default": "Aiseau-Presles",
+    "name:fr": "Aiseau-Presles",
+    "name:nl": null,
+    "lat": 50.4163581,
+    "lon": 4.5711984
+  },
+  {
+    "name:default": "Oudsbergen",
+    "name:fr": null,
+    "name:nl": "Oudsbergen",
+    "lat": 51.0680799,
+    "lon": 5.557165
+  },
+  {
+    "name:default": "Jemeppe-sur-Meuse",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 50.6180868,
+    "lon": 5.4997184
+  },
+  {
+    "name:default": "Boussu",
+    "name:fr": "Boussu",
+    "name:nl": null,
+    "lat": 50.4331253,
+    "lon": 3.7960902
+  },
+  {
+    "name:default": "Braine-le-Comte",
+    "name:fr": "Braine-le-Comte",
+    "name:nl": "'s-Gravenbrakel",
+    "lat": 50.6107057,
+    "lon": 4.1360702
+  },
+  {
+    "name:default": "Colfontaine",
+    "name:fr": "Colfontaine",
+    "name:nl": null,
+    "lat": 50.4056635,
+    "lon": 3.8513958
+  },
+  {
+    "name:default": "Dour",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 50.3963781,
+    "lon": 3.7786762
+  },
+  {
+    "name:default": "Estaimpuis",
+    "name:fr": "Estaimpuis",
+    "name:nl": "Steenput",
+    "lat": 50.7059794,
+    "lon": 3.2640184
+  },
+  {
+    "name:default": "Frameries",
+    "name:fr": "Frameries",
+    "name:nl": null,
+    "lat": 50.4096511,
+    "lon": 3.8933015
+  },
+  {
+    "name:default": "Ans",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 50.6679862,
+    "lon": 5.5077543
+  },
+  {
+    "name:default": "Grobbendonk",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 51.1919904,
+    "lon": 4.7385027
+  },
+  {
+    "name:default": "Kinrooi",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 51.1449692,
+    "lon": 5.7414008
+  },
+  {
+    "name:default": "Houthulst",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 50.977425,
+    "lon": 2.9524442
+  },
+  {
+    "name:default": "Nazareth",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 50.959802,
+    "lon": 3.5963218
+  },
+  {
+    "name:default": "Pepinster",
+    "name:fr": "Pepinster",
+    "name:nl": null,
+    "lat": 50.5675217,
+    "lon": 5.8037101
+  },
+  {
+    "name:default": "Aalter",
+    "name:fr": "Aeltre",
+    "name:nl": "Aalter",
+    "lat": 51.083894,
+    "lon": 3.4485192
+  },
+  {
+    "name:default": "Mouscron - Moeskroen",
+    "name:fr": "Mouscron",
+    "name:nl": "Moeskroen",
+    "lat": 50.7436672,
+    "lon": 3.2142729
+  },
+  {
+    "name:default": "Holsbeek",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 50.9215896,
+    "lon": 4.7570606
+  },
+  {
+    "name:default": "Ougrée",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 50.591146,
+    "lon": 5.5439611
+  },
+  {
+    "name:default": "Maldegem",
+    "name:fr": null,
+    "name:nl": "Maldegem",
+    "lat": 51.2088871,
+    "lon": 3.4452214
+  },
+  {
+    "name:default": "Tessenderlo",
+    "name:fr": null,
+    "name:nl": "Tessenderlo",
+    "lat": 51.0676205,
+    "lon": 5.0878638
+  },
+  {
+    "name:default": "Jurbise",
+    "name:fr": "Jurbise",
+    "name:nl": "Jurbeke",
+    "lat": 50.5325067,
+    "lon": 3.9113179
+  },
+  {
+    "name:default": "Boutersem",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 50.8399894,
+    "lon": 4.8321318
+  },
+  {
+    "name:default": "Morlanwelz-Mariemont",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 50.4559649,
+    "lon": 4.2420853
+  },
+  {
+    "name:default": "Manage",
+    "name:fr": "Manage",
+    "name:nl": null,
+    "lat": 50.5040159,
+    "lon": 4.2355599
+  },
+  {
+    "name:default": "Couillet",
+    "name:fr": "Couillet",
+    "name:nl": null,
+    "lat": 50.391219,
+    "lon": 4.468631
+  },
+  {
+    "name:default": "Gilly",
+    "name:fr": "Gilly",
+    "name:nl": null,
+    "lat": 50.4239968,
+    "lon": 4.4859796
+  },
+  {
+    "name:default": "Marcinelle",
+    "name:fr": "Marcinelle",
+    "name:nl": null,
+    "lat": 50.3977245,
+    "lon": 4.4442531
+  },
+  {
+    "name:default": "Mont-sur-Marchienne",
+    "name:fr": "Mont-sur-Marchienne",
+    "name:nl": null,
+    "lat": 50.3879085,
+    "lon": 4.4040733
+  },
+  {
+    "name:default": "Laakdal",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 51.0802695,
+    "lon": 5.0073022
+  },
+  {
+    "name:default": "Florennes",
+    "name:fr": null,
+    "name:nl": "Florennes",
+    "lat": 50.2514227,
+    "lon": 4.6030187
+  },
+  {
+    "name:default": "Jemeppe-sur-Sambre",
+    "name:fr": "Jemeppe-sur-Sambre",
+    "name:nl": "Jemeppe-sur-Sambre",
+    "lat": 50.4656388,
+    "lon": 4.6686837
+  },
+  {
+    "name:default": "Zulte",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 50.9206638,
+    "lon": 3.4485632
+  },
+  {
+    "name:default": "Beernem",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 51.1405698,
+    "lon": 3.3347317
+  },
+  {
+    "name:default": "Sint-Martens-Latem",
+    "name:fr": "Laethem-Saint-Martin",
+    "name:nl": "Sint-Martens-Latem",
+    "lat": 51.020971,
+    "lon": 3.6397549
+  },
+  {
+    "name:default": "Moorslede",
+    "name:fr": null,
+    "name:nl": "Moorslede",
+    "lat": 50.8914035,
+    "lon": 3.063026
+  },
+  {
+    "name:default": "Kuurne",
+    "name:fr": "Cuerne",
+    "name:nl": "Kuurne",
+    "lat": 50.8522857,
+    "lon": 3.2864742
+  },
+  {
+    "name:default": "Koksijde",
+    "name:fr": "Coxyde",
+    "name:nl": "Koksijde",
+    "lat": 51.1187723,
+    "lon": 2.6349277
+  },
+  {
+    "name:default": "Oostkamp",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 51.1532024,
+    "lon": 3.2344535
+  },
+  {
+    "name:default": "Sankt Vith",
+    "name:fr": "Saint-Vith",
+    "name:nl": null,
+    "lat": 50.2803881,
+    "lon": 6.1258953
+  },
+  {
+    "name:default": "De Pinte",
+    "name:fr": "La Pinte",
+    "name:nl": "De Pinte",
+    "lat": 50.9924205,
+    "lon": 3.6495958
+  },
+  {
+    "name:default": "Ferrières",
+    "name:fr": "Ferrières",
+    "name:nl": null,
+    "lat": 50.4001995,
+    "lon": 5.6063928
+  },
+  {
+    "name:default": "Dison",
+    "name:fr": "Dison",
+    "name:nl": null,
+    "lat": 50.611374,
+    "lon": 5.854735
+  },
+  {
+    "name:default": "Blegny",
+    "name:fr": "Blegny",
+    "name:nl": null,
+    "lat": 50.6727185,
+    "lon": 5.7252372
+  },
+  {
+    "name:default": "Flémalle",
+    "name:fr": "Flémalle",
+    "name:nl": null,
+    "lat": 50.5994478,
+    "lon": 5.4699616
+  },
+  {
+    "name:default": "Grâce-Hollogne",
+    "name:fr": "Grâce-Hollogne",
+    "name:nl": null,
+    "lat": 50.6323039,
+    "lon": 5.4768436
+  },
+  {
+    "name:default": "Montegnée",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 50.6423367,
+    "lon": 5.5186082
+  },
+  {
+    "name:default": "Beyne-Heusay",
+    "name:fr": "Beyne-Heusay",
+    "name:nl": null,
+    "lat": 50.6220566,
+    "lon": 5.6534141
+  },
+  {
+    "name:default": "Trooz",
+    "name:fr": "Trooz",
+    "name:nl": null,
+    "lat": 50.5728102,
+    "lon": 5.6883726
+  },
+  {
+    "name:default": "Lille",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 51.238218,
+    "lon": 4.8242404
+  },
+  {
+    "name:default": "Melle",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 51.00303,
+    "lon": 3.7988833
+  },
+  {
+    "name:default": "Zwalm",
+    "name:fr": "Zwalin",
+    "name:nl": "Zwalm",
+    "lat": 50.8793307,
+    "lon": 3.719334
+  },
+  {
+    "name:default": "Lummen",
+    "name:fr": null,
+    "name:nl": "Lummen",
+    "lat": 50.9862157,
+    "lon": 5.1918579
+  },
+  {
+    "name:default": "Mons",
+    "name:fr": "Mons",
+    "name:nl": "Bergen",
+    "lat": 50.4549568,
+    "lon": 3.951958
+  },
+  {
+    "name:default": "Evergem",
+    "name:fr": "Everghem",
+    "name:nl": "Evergem",
+    "lat": 51.1087891,
+    "lon": 3.7078565
+  },
+  {
+    "name:default": "Montigny-le-Tilleul",
+    "name:fr": "Montigny-le-Tilleul",
+    "name:nl": null,
+    "lat": 50.3788966,
+    "lon": 4.3793383
+  },
+  {
+    "name:default": "Quaregnon",
+    "name:fr": "Quaregnon",
+    "name:nl": null,
+    "lat": 50.4421647,
+    "lon": 3.8637279
+  },
+  {
+    "name:default": "Maaseik",
+    "name:fr": null,
+    "name:nl": "Maaseik",
+    "lat": 51.0947181,
+    "lon": 5.791733
+  },
+  {
+    "name:default": "Lanaken",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 50.8892784,
+    "lon": 5.6513208
+  },
+  {
+    "name:default": "Bastogne",
+    "name:fr": "Bastogne",
+    "name:nl": "Bastenaken",
+    "lat": 50.0023102,
+    "lon": 5.7173386
+  },
+  {
+    "name:default": "Vosselaar",
+    "name:fr": null,
+    "name:nl": "Vosselaar",
+    "lat": 51.3129153,
+    "lon": 4.8878026
+  },
+  {
+    "name:default": "Olen",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 51.1438611,
+    "lon": 4.8597257
+  },
+  {
+    "name:default": "Leuven",
+    "name:fr": "Louvain",
+    "name:nl": "Leuven",
+    "lat": 50.879202,
+    "lon": 4.7011675
+  },
+  {
+    "name:default": "Mol",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 51.1840421,
+    "lon": 5.1155267
+  },
+  {
+    "name:default": "Meerhout",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 51.1317433,
+    "lon": 5.0772388
+  },
+  {
+    "name:default": "Dessel",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 51.2390765,
+    "lon": 5.1128221
+  },
+  {
+    "name:default": "Dendermonde",
+    "name:fr": "Termonde",
+    "name:nl": "Dendermonde",
+    "lat": 51.0312293,
+    "lon": 4.098112
+  },
+  {
+    "name:default": "Berlare",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 51.0251576,
+    "lon": 4.0034747
+  },
+  {
+    "name:default": "Lokeren",
+    "name:fr": "Locres",
+    "name:nl": null,
+    "lat": 51.1044488,
+    "lon": 3.9898689
+  },
+  {
+    "name:default": "Waasmunster",
+    "name:fr": "Waesmunster",
+    "name:nl": "Waasmunster",
+    "lat": 51.1097147,
+    "lon": 4.0842158
+  },
+  {
+    "name:default": "Wichelen",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 51.0060797,
+    "lon": 3.9742524
+  },
+  {
+    "name:default": "Haaltert",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 50.9022532,
+    "lon": 4.0057717
+  },
+  {
+    "name:default": "Ninove",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 50.8353611,
+    "lon": 4.0242373
+  },
+  {
+    "name:default": "Kasterlee",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 51.2407915,
+    "lon": 4.967812
+  },
+  {
+    "name:default": "Bruxelles - Brussel",
+    "name:fr": "Bruxelles",
+    "name:nl": "Brussel",
+    "lat": 50.8465573,
+    "lon": 4.351697
+  },
+  {
+    "name:default": "Genk",
+    "name:fr": null,
+    "name:nl": "Genk",
+    "lat": 50.9654864,
+    "lon": 5.5001456
+  },
+  {
+    "name:default": "Ieper",
+    "name:fr": "Ypres",
+    "name:nl": "Ieper",
+    "lat": 50.8521947,
+    "lon": 2.8846047
+  },
+  {
+    "name:default": "Oudenaarde",
+    "name:fr": "Audenarde",
+    "name:nl": "Oudenaarde",
+    "lat": 50.8433705,
+    "lon": 3.6041443
+  },
+  {
+    "name:default": "Denderleeuw",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 50.8834499,
+    "lon": 4.0816397
+  },
+  {
+    "name:default": "Scherpenheuvel-Zichem",
+    "name:fr": "Montaigu-Zichem",
+    "name:nl": "Scherpenheuvel-Zichem",
+    "lat": 50.9801033,
+    "lon": 4.9740173
+  },
+  {
+    "name:default": "Sint-Niklaas",
+    "name:fr": "Saint-Nicolas-Waes",
+    "name:nl": "Sint-Niklaas",
+    "lat": 51.1646685,
+    "lon": 4.1395124
+  },
+  {
+    "name:default": "Retie",
+    "name:fr": "Réthy",
+    "name:nl": "Retie",
+    "lat": 51.2675862,
+    "lon": 5.0843883
+  },
+  {
+    "name:default": "Geel",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 51.1610826,
+    "lon": 4.9903187
+  },
+  {
+    "name:default": "Tienen",
+    "name:fr": "Tirlemont",
+    "name:nl": "Tienen",
+    "lat": 50.8074825,
+    "lon": 4.9371775
+  },
+  {
+    "name:default": "Veurne",
+    "name:fr": "Furnes",
+    "name:nl": "Veurne",
+    "lat": 51.0724273,
+    "lon": 2.6621323
+  },
+  {
+    "name:default": "Nieuwpoort",
+    "name:fr": "Nieuport",
+    "name:nl": "Nieuwpoort",
+    "lat": 51.1294306,
+    "lon": 2.751666
+  },
+  {
+    "name:default": "Oostende",
+    "name:fr": "Ostende",
+    "name:nl": "Oostende",
+    "lat": 51.2258565,
+    "lon": 2.919496
+  },
+  {
+    "name:default": "Brugge",
+    "name:fr": "Bruges",
+    "name:nl": "Brugge",
+    "lat": 51.2085526,
+    "lon": 3.226772
+  },
+  {
+    "name:default": "Diksmuide",
+    "name:fr": "Dixmude",
+    "name:nl": "Diksmuide",
+    "lat": 51.0333408,
+    "lon": 2.8647185
+  },
+  {
+    "name:default": "Aalst",
+    "name:fr": "Alost",
+    "name:nl": "Aalst",
+    "lat": 50.9383226,
+    "lon": 4.0392147
+  },
+  {
+    "name:default": "Gent",
+    "name:fr": "Gand",
+    "name:nl": "Gent",
+    "lat": 51.0538286,
+    "lon": 3.7250121
+  },
+  {
+    "name:default": "Roeselare",
+    "name:fr": "Roulers",
+    "name:nl": "Roeselare",
+    "lat": 50.9444948,
+    "lon": 3.124765
+  },
+  {
+    "name:default": "Sint-Truiden",
+    "name:fr": "Saint-Trond",
+    "name:nl": "Sint-Truiden",
+    "lat": 50.8152784,
+    "lon": 5.1858896
+  },
+  {
+    "name:default": "Borgloon",
+    "name:fr": "Looz",
+    "name:nl": "Borgloon",
+    "lat": 50.8024529,
+    "lon": 5.3435704
+  },
+  {
+    "name:default": "Zoutleeuw",
+    "name:fr": "Léau",
+    "name:nl": "Zoutleeuw",
+    "lat": 50.8331973,
+    "lon": 5.1030991
+  },
+  {
+    "name:default": "Vilvoorde",
+    "name:fr": "Vilvorde",
+    "name:nl": "Vilvoorde",
+    "lat": 50.928711,
+    "lon": 4.423126
+  },
+  {
+    "name:default": "Herk-de-Stad",
+    "name:fr": "Herck-la-Ville",
+    "name:nl": "Herk-de-Stad",
+    "lat": 50.9406957,
+    "lon": 5.1659696
+  },
+  {
+    "name:default": "Tongeren",
+    "name:fr": "Tongres",
+    "name:nl": "Tongeren",
+    "lat": 50.7806267,
+    "lon": 5.4639172
+  },
+  {
+    "name:default": "Halle",
+    "name:fr": "Hal",
+    "name:nl": "Halle",
+    "lat": 50.7360524,
+    "lon": 4.2374349
+  },
+  {
+    "name:default": "Ronse - Renaix",
+    "name:fr": "Renaix",
+    "name:nl": "Ronse",
+    "lat": 50.7476192,
+    "lon": 3.6020465
+  },
+  {
+    "name:default": "Mesen - Messines",
+    "name:fr": "Messines",
+    "name:nl": "Mesen",
+    "lat": 50.765419,
+    "lon": 2.8984493
+  },
+  {
+    "name:default": "Menen",
+    "name:fr": "Menin",
+    "name:nl": "Menen",
+    "lat": 50.7960046,
+    "lon": 3.1208922
+  },
+  {
+    "name:default": "Sint-Genesius-Rode - Rhode-Saint-Genèse",
+    "name:fr": "Rhode-Saint-Genèse",
+    "name:nl": "Sint-Genesius-Rode",
+    "lat": 50.74503,
+    "lon": 4.3463687
+  },
+  {
+    "name:default": "Liège",
+    "name:fr": "Liège",
+    "name:nl": "Luik",
+    "lat": 50.6450944,
+    "lon": 5.5736112
+  },
+  {
+    "name:default": "Oupeye",
+    "name:fr": "Oupeye",
+    "name:nl": null,
+    "lat": 50.7091889,
+    "lon": 5.6450671
+  },
+  {
+    "name:default": "Comines-Warneton - Komen-Waasten",
+    "name:fr": "Comines-Warneton",
+    "name:nl": "Komen-Waasten",
+    "lat": 50.7687443,
+    "lon": 2.9997568
+  },
+  {
+    "name:default": "Antwerpen",
+    "name:fr": "Anvers",
+    "name:nl": "Antwerpen",
+    "lat": 51.2211097,
+    "lon": 4.3997081
+  },
+  {
+    "name:default": "Namur",
+    "name:fr": "Namur",
+    "name:nl": "Namen",
+    "lat": 50.4665284,
+    "lon": 4.8661892
+  },
+  {
+    "name:default": "Herstal",
+    "name:fr": "Herstal",
+    "name:nl": null,
+    "lat": 50.6650412,
+    "lon": 5.629981
+  },
+  {
+    "name:default": "Heusden-Zolder",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 51.0233485,
+    "lon": 5.2750485
+  },
+  {
+    "name:default": "Winterslag",
+    "name:fr": null,
+    "name:nl": "Winterslag",
+    "lat": 50.9771632,
+    "lon": 5.4858516
+  },
+  {
+    "name:default": "Gentbrugge",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 51.0447236,
+    "lon": 3.7588813
+  },
+  {
+    "name:default": "Oud-Turnhout",
+    "name:fr": "Vieux-Turnhout",
+    "name:nl": "Oud-Turnhout",
+    "lat": 51.3178319,
+    "lon": 4.9817086
+  },
+  {
+    "name:default": "Ravels",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 51.3717045,
+    "lon": 4.9955625
+  },
+  {
+    "name:default": "Mechelen",
+    "name:fr": "Malines",
+    "name:nl": "Mechelen",
+    "lat": 51.0281381,
+    "lon": 4.4803453
+  },
+  {
+    "name:default": "Balen",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 51.1707551,
+    "lon": 5.1696859
+  },
+  {
+    "name:default": "Sint-Gillis-Waas",
+    "name:fr": "Saint-Gilles-Waes",
+    "name:nl": "Sint-Gillis-Waas",
+    "lat": 51.2179895,
+    "lon": 4.1286101
+  },
+  {
+    "name:default": "Kontich",
+    "name:fr": null,
+    "name:nl": "Kontich",
+    "lat": 51.1353297,
+    "lon": 4.4454784
+  },
+  {
+    "name:default": "Zottegem",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 50.8694602,
+    "lon": 3.8092452
+  },
+  {
+    "name:default": "Beersel",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 50.7660759,
+    "lon": 4.3079526
+  },
+  {
+    "name:default": "Hamont-Achel",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 51.2547636,
+    "lon": 5.5128696
+  },
+  {
+    "name:default": "Dinant",
+    "name:fr": "Dinant",
+    "name:nl": "Dinant",
+    "lat": 50.2591813,
+    "lon": 4.9130588
+  },
+  {
+    "name:default": "Hulshout",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 51.0753923,
+    "lon": 4.7885461
+  },
+  {
+    "name:default": "Geraardsbergen",
+    "name:fr": "Grammont",
+    "name:nl": "Geraardsbergen",
+    "lat": 50.7715779,
+    "lon": 3.8827287
+  },
+  {
+    "name:default": "Hechtel-Eksel",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 51.1340192,
+    "lon": 5.3780119
+  },
+  {
+    "name:default": "Houthalen-Helchteren",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 51.0467933,
+    "lon": 5.3780416
+  },
+  {
+    "name:default": "Destelbergen",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 51.0556204,
+    "lon": 3.7978887
+  },
+  {
+    "name:default": "Dilsen-Stokkem",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 51.0284779,
+    "lon": 5.7311405
+  },
+  {
+    "name:default": "Kortrijk",
+    "name:fr": "Courtrai",
+    "name:nl": "Kortrijk",
+    "lat": 50.8276429,
+    "lon": 3.2659884
+  },
+  {
+    "name:default": "Pelt",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 51.2197672,
+    "lon": 5.4299496
+  },
+  {
+    "name:default": "Lievegem",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 51.1266908,
+    "lon": 3.5884951
+  },
+  {
+    "name:default": "Puurs-Sint-Amands",
+    "name:fr": "Puers-Saint-Amand",
+    "name:nl": "Puurs-Sint-Amands",
+    "lat": 51.066411,
+    "lon": 4.2812346
+  },
+  {
+    "name:default": "Kruisem",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 50.9085536,
+    "lon": 3.5648916
+  },
+  {
+    "name:default": "Heuvelland",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 50.773569,
+    "lon": 2.8326917
+  },
+  {
+    "name:default": "Ancienne caserne Léopold",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 49.684904,
+    "lon": 5.8191992
+  },
+  {
+    "name:default": "Le Rœulx",
+    "name:fr": "Le Rœulx",
+    "name:nl": null,
+    "lat": 50.5016823,
+    "lon": 4.1088596
+  },
+  {
+    "name:default": "Sambreville",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 50.4490552,
+    "lon": 4.6108156
+  },
+  {
+    "name:default": "Beauraing",
+    "name:fr": null,
+    "name:nl": null,
+    "lat": 50.1102739,
+    "lon": 4.9549279
+  },
+  {
+    "name:default": "Pajottegem",
+    "name:fr": "Pajottegem",
+    "name:nl": "Pajottegem",
+    "lat": 50.7511405,
+    "lon": 4.0422133
+  },
+  {
+    "name:default": "Tessenderlo-Ham",
+    "name:fr": null,
+    "name:nl": "Tessenderlo-Ham",
+    "lat": 51.0688127,
+    "lon": 5.0905551
+  }
+]
