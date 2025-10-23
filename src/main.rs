@@ -1,3 +1,5 @@
+use std::path::PathBuf;
+
 use bevy::input::mouse::MouseButtonInput;
 use bevy::prelude::*;
 use bevy_svg::prelude::Origin;
@@ -55,7 +57,7 @@ fn setup_city_assets(
 struct LocTimer(Timer);
 
 fn add_city(mut commands: Commands) {
-    let path = std::path::Path::new(r"..\database\belgium_cities.json");
+    let path: PathBuf = ["database", "belgium_cities.json"].iter().collect();
     let db = load_database(path);
     println!("{db:?}");
     commands.spawn(BundleCity {
@@ -116,7 +118,8 @@ fn spawn_city_with_label(
     city_assets: Res<CityAssets>,
     city: BundleCity,
 ) {
-    let font: Handle<Font> = asset_server.load(r"fonts\FiraMono-Medium.ttf");
+    let path: PathBuf = ["fonts", "FiraMono-Medium.ttf"].iter().collect();
+    let font: Handle<Font> = asset_server.load(path);
     let location = city.loc.0;
     let name = city.name.0.clone();
     // Spawn the city point
