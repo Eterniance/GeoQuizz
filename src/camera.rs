@@ -1,7 +1,7 @@
 use bevy::core_pipeline::core_2d::Camera2d;
-use bevy::input::mouse::{MouseScrollUnit, MouseWheel};
 use bevy::prelude::*;
 use bevy_svg::prelude::*;
+// use bevy::input::mouse::{MouseScrollUnit, MouseWheel};
 // use bevy::sprite::{Wireframe2dConfig, Wireframe2dPlugin};
 
 pub struct MapPlugin;
@@ -31,28 +31,29 @@ fn setup(mut commands: Commands, asset_server: Res<AssetServer>) {
     ));
 }
 
-pub fn camera_zoom_system(
-    mut evr_scroll: EventReader<MouseWheel>,
-    mut camera: Query<(Option<Mut<Projection>>, Mut<Transform>), With<Camera>>,
-) {
-    for ev in evr_scroll.read() {
-        for (projection, mut transform) in camera.iter_mut() {
-            let amount = match ev.unit {
-                MouseScrollUnit::Line => ev.y,
-                MouseScrollUnit::Pixel => ev.y,
-            };
-            if let Some(mut projection) = projection {
-                if let Projection::Orthographic(ref mut projection) = *projection {
-                    projection.scale -= if projection.scale <= 1.0 {
-                        amount * 0.05
-                    } else {
-                        amount
-                    };
-                    projection.scale = projection.scale.clamp(0.01, 10.0);
-                }
-            } else {
-                transform.translation.z -= amount;
-            }
-        }
-    }
-}
+
+// pub fn camera_zoom_system(
+//     mut evr_scroll: EventReader<MouseWheel>,
+//     mut camera: Query<(Option<Mut<Projection>>, Mut<Transform>), With<Camera>>,
+// ) {
+//     for ev in evr_scroll.read() {
+//         for (projection, mut transform) in camera.iter_mut() {
+//             let amount = match ev.unit {
+//                 MouseScrollUnit::Line => ev.y,
+//                 MouseScrollUnit::Pixel => ev.y,
+//             };
+//             if let Some(mut projection) = projection {
+//                 if let Projection::Orthographic(ref mut projection) = *projection {
+//                     projection.scale -= if projection.scale <= 1.0 {
+//                         amount * 0.05
+//                     } else {
+//                         amount
+//                     };
+//                     projection.scale = projection.scale.clamp(0.01, 10.0);
+//                 }
+//             } else {
+//                 transform.translation.z -= amount;
+//             }
+//         }
+//     }
+// }
