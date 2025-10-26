@@ -1,7 +1,7 @@
 use bevy::{
-    prelude::*,
     ecs::{bundle::Bundle, component::Component, resource::Resource},
     math::Vec2,
+    prelude::*,
 };
 use thiserror::Error;
 
@@ -11,13 +11,19 @@ pub enum GeoError {
     DataLoading(String),
 }
 
-#[derive(Component, Debug)]
+#[derive(Component, Debug, Clone)]
 pub struct Location(pub Vec2);
 
-#[derive(Component, Debug)]
+impl From<Vec2> for Location {
+    fn from(value: Vec2) -> Self {
+        Self(value)
+    }
+}
+
+#[derive(Component, Debug, Clone)]
 pub struct City;
 
-#[derive(Bundle, Debug)]
+#[derive(Bundle, Debug, Clone)]
 pub struct BundleCity {
     pub city: City,
     pub name: Name,
@@ -26,7 +32,7 @@ pub struct BundleCity {
 
 #[derive(Debug, Resource)]
 pub struct GuessSet {
-    pub cities: Vec<BundleCity>
+    pub cities: Vec<BundleCity>,
 }
 
 #[derive(Resource)]
@@ -46,4 +52,3 @@ pub enum GuessType {
     Name(String),
     Location(Vec2),
 }
-

@@ -15,13 +15,10 @@ pub use game::GamePlugin;
 
 pub struct SetupPlugin;
 
-impl PluginGroup  for SetupPlugin {
+impl PluginGroup for SetupPlugin {
     fn build(self) -> PluginGroupBuilder {
         PluginGroupBuilder::start::<Self>()
             .add(AssetsPlugin)
             .add(MapPlugin)
     }
-
 }
-
-

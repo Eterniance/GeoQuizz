@@ -2,7 +2,7 @@ use bevy::prelude::*;
 
 use geo_quizz::{GamePlugin, SetupPlugin};
 
-use geo_quizz::types::{City, Location};
+use geo_quizz::types::{City, CityAssets, GuessSet, Location};
 
 fn main() {
     App::new()
@@ -11,12 +11,8 @@ fn main() {
         .run();
 }
 
-
-
-
 #[derive(Resource)]
 struct LocTimer(Timer);
-
 
 fn find_city(time: Res<Time>, mut timer: ResMut<LocTimer>, query: Query<&Location, With<City>>) {
     if timer.0.tick(time.delta()).just_finished() {
@@ -25,8 +21,4 @@ fn find_city(time: Res<Time>, mut timer: ResMut<LocTimer>, query: Query<&Locatio
         }
     }
 }
-
-
-
-
 

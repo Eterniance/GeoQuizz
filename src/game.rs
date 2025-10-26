@@ -1,11 +1,10 @@
-
 use bevy::prelude::*;
 use bevy_svg::prelude::Origin;
 use std::path::PathBuf;
 
 use bevy::input::mouse::MouseButtonInput;
 
-use crate::types::{BundleCity, City, CityAssets, GuessAssets, GuessType, Location};
+use crate::types::{BundleCity, City, CityAssets, GuessAssets, GuessSet, GuessType, Location};
 
 pub struct GamePlugin;
 
@@ -121,3 +120,21 @@ fn evaluate_guess(
         }
     }
 }
+
+
+fn spawn_all_cities(
+    commands: Commands,
+    asset_server: Res<AssetServer>,
+    city_assets: Res<CityAssets>,
+    guess_set: Res<GuessSet>,
+) {
+     let city = &guess_set.cities[0];
+        spawn_city_with_label(
+            commands,
+            asset_server,
+            city_assets,
+            city.clone(),
+        );
+    info!("✅ All cities spawned successfully!");
+}
+

@@ -1,10 +1,11 @@
 import json
 import math
-
+from pathlib import Path
 X0 = math.radians(4.5)
+PATH = Path(__file__).parent.resolve() / "belgium_cities.json"
 
 def average_xy():
-    with open('belgium_cities.json', 'r') as file:
+    with open(PATH, 'r') as file:
         data = json.load(file)
     lat0 = 0
     lon0 = 0
@@ -32,9 +33,10 @@ def compute_offset(s1, s_target1, scale):
 
 
 def main():
-    with open('belgium_cities.json', 'r') as file:
+    with open(PATH, 'r') as file:
         data = json.load(file)
 
+    target = "Soignies"
     for el in data:
         if el["name:fr"] == "Arlon":
             lat = float(el["lat"])
@@ -46,7 +48,7 @@ def main():
             lon = float(el["lon"])
             xO,yO = mercator(lon,lat)
 
-        if el["name:fr"] == "Mons":
+        if el["name:fr"] == target:
             lat = float(el["lat"])
             lon = float(el["lon"])
             xB,yB = mercator(lon,lat)
@@ -65,7 +67,7 @@ def main():
 
     new_xB = a_x*xB+b_x
     new_yB = a_y*yB+b_y
-    print(f"Bruxelles coordinate = {new_xB},{new_yB}")
+    print(f"{target} coordinate = {new_xB},{new_yB}")
 
 if __name__ == "__main__":
     main()

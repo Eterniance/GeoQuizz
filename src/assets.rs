@@ -1,16 +1,20 @@
 use std::path::PathBuf;
 
-use bevy::{prelude::*};
+use bevy::prelude::*;
 
-use crate::{load_database, types::{BundleCity, City, CityAssets, GuessAssets, Location}};
-
-
+use crate::{
+    load_database,
+    types::{CityAssets, GuessAssets, GuessSet},
+};
 
 pub struct AssetsPlugin;
 
 impl Plugin for AssetsPlugin {
     fn build(&self, app: &mut App) {
-        app.add_systems(Startup, (setup_guess_assets, setup_city_assets, add_city));
+        app.add_systems(
+            Startup,
+            (setup_guess_assets, setup_city_assets, init_guess_set),
+        );
     }
 }
 
@@ -25,7 +29,6 @@ fn setup_guess_assets(
     commands.insert_resource(GuessAssets { mesh, material });
 }
 
-
 fn setup_city_assets(
     mut commands: Commands,
     mut meshes: ResMut<Assets<Mesh>>,
@@ -36,16 +39,12 @@ fn setup_city_assets(
     commands.insert_resource(CityAssets { mesh, material });
 }
 
-fn add_city(mut commands: Commands) {
+fn init_guess_set(mut commands: Commands) {
     let path: PathBuf = ["database", "belgium_cities.json"].iter().collect();
-    let db = load_database(path).unwrap();
-    commands.spawn(BundleCity {
-        city: City,
-        name: Name::new("Soignies".to_string()),
-        loc: Location(Vec2::new(-89.0, 13.0)),
-    });
+    let cities = load_database(path).expect("database should exist");
+    let city = cities[0].clone();
+    commands.spawn(city);
+
+    let guess_set = GuessSet { cities };
+    commands.insert_resource(guess_set);
 }
-
-
-
-
