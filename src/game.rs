@@ -4,13 +4,20 @@ use std::path::PathBuf;
 
 use bevy::input::mouse::MouseButtonInput;
 
-use crate::types::{BundleCity, City, CityAssets, GuessAssets, GuessSet, GuessType, Location};
+use crate::types::{
+    BundleCity, City, CityAssets, GuessAssets, GuessSet, GuessType, GuessValidated, Location,
+    SpawnCity,
+};
 
 pub struct GamePlugin;
 
 impl Plugin for GamePlugin {
     fn build(&self, app: &mut App) {
-        app.add_systems(Update, (click_to_spawn_circle, evaluate_guess));
+        app.add_systems(Update, (click_to_spawn_circle, trigger_guess_validation))
+            .add_systems(
+                Update,
+                (evaluate_guess, spawn_city.after(evaluate_guess)).chain(),
+            );
     }
 }
 
@@ -51,7 +58,7 @@ fn click_to_spawn_circle(
     }
 }
 
-fn spawn_city_with_label(
+fn reveal_city(
     mut commands: Commands,
     asset_server: Res<AssetServer>,
     city_assets: Res<CityAssets>,
@@ -82,15 +89,17 @@ fn spawn_city_with_label(
 }
 
 fn evaluate_guess(
-    commands: Commands,
-    keyboard_input: Res<ButtonInput<KeyCode>>,
+    mut commands: Commands,
+    mut events: EventReader<GuessValidated>,
+    mut spawn_city_event: EventWriter<SpawnCity>,
     guess_query: Query<&GuessType>,
     anwser_query: Query<(Entity, &Name, &Location), With<City>>,
     asset_server: Res<AssetServer>,
     city_assets: Res<CityAssets>,
 ) {
-    if keyboard_input.just_pressed(KeyCode::Space) {
-        if let Ok((_entity, name_field, loc_field)) = anwser_query.single() {
+    if events.read().last().is_some() {
+        if let Ok((entity, name_field, loc_field)) = anwser_query.single() {
+            commands.entity(entity).despawn();
             let name = name_field.as_str();
             let loc = loc_field.0;
             if let Ok(guess) = guess_query.single() {
@@ -98,7 +107,7 @@ fn evaluate_guess(
                     GuessType::Location(guess_pos) => {
                         let distance = guess_pos.distance(loc);
                         println!("{} is {:.1} a.u. away from your guess!", name, distance);
-                        spawn_city_with_label(
+                        reveal_city(
                             commands,
                             asset_server,
                             city_assets,
@@ -114,27 +123,52 @@ fn evaluate_guess(
             } else {
                 println!("No guess has been made yet.");
             }
-            // commands.entity(entity).despawn();
         } else {
             println!("Multiple answers possible")
         }
+        spawn_city_event.write(SpawnCity);
     }
 }
 
-
-fn spawn_all_cities(
-    commands: Commands,
-    asset_server: Res<AssetServer>,
-    city_assets: Res<CityAssets>,
-    guess_set: Res<GuessSet>,
+pub fn spawn_city(
+    mut commands: Commands,
+    mut guess_set: ResMut<GuessSet>,
+    mut events: EventReader<SpawnCity>,
 ) {
-     let city = &guess_set.cities[0];
-        spawn_city_with_label(
-            commands,
-            asset_server,
-            city_assets,
-            city.clone(),
-        );
-    info!("✅ All cities spawned successfully!");
+    if events.read().last().is_some()
+        && let Some(city) = guess_set.to_guess.pop()
+    {
+        println!("Find {}", city.name);
+        commands.spawn(city.clone());
+    }
 }
 
+pub fn trigger_guess_validation(
+    keyboard_input: Res<ButtonInput<KeyCode>>,
+    mut event: EventWriter<GuessValidated>,
+) {
+    if keyboard_input.just_pressed(KeyCode::Space) {
+        event.write(GuessValidated);
+    }
+}
+
+pub struct InitGame;
+
+impl Plugin for InitGame {
+    fn build(&self, app: &mut App) {
+        app.add_event::<SpawnCity>()
+            .add_event::<GuessValidated>()
+            .add_systems(
+                Startup,
+                (init_guess, trigger_spawn_city.after(init_guess)).chain(),
+            );
+    }
+}
+
+pub fn trigger_spawn_city(mut event: EventWriter<SpawnCity>) {
+    event.write(SpawnCity);
+}
+
+pub fn init_guess(mut commands: Commands) {
+    commands.init_resource::<GuessSet>();
+}

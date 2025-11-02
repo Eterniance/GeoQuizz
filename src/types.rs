@@ -1,8 +1,12 @@
+use std::path::PathBuf;
+
+use crate::loader::load_database;
 use bevy::{
     ecs::{bundle::Bundle, component::Component, resource::Resource},
     math::Vec2,
     prelude::*,
 };
+use rand::seq::IteratorRandom;
 use thiserror::Error;
 
 #[derive(Debug, Error)]
@@ -32,7 +36,27 @@ pub struct BundleCity {
 
 #[derive(Debug, Resource)]
 pub struct GuessSet {
-    pub cities: Vec<BundleCity>,
+    all_cities: Vec<BundleCity>,
+    pub to_guess: Vec<BundleCity>,
+}
+
+impl Default for GuessSet {
+    fn default() -> Self {
+        let path: PathBuf = ["database", "belgium_cities.json"].iter().collect();
+        let all_cities = load_database(path).expect("Should exists");
+        let mut rng = rand::rng();
+
+        let to_guess = all_cities
+            .iter()
+            .choose_multiple(&mut rng, 10)
+            .into_iter()
+            .cloned()
+            .collect();
+        Self {
+            all_cities,
+            to_guess,
+        }
+    }
 }
 
 #[derive(Resource)]
@@ -52,3 +76,9 @@ pub enum GuessType {
     Name(String),
     Location(Vec2),
 }
+
+#[derive(Event)]
+pub struct GuessValidated;
+
+#[derive(Event)]
+pub struct SpawnCity;
