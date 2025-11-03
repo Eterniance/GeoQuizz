@@ -4,12 +4,9 @@ use std::path::PathBuf;
 
 use bevy::input::mouse::MouseButtonInput;
 
-use crate::{
-    assets::CityNameToGuess,
-    types::{
-        BundleCity, City, CityAssets, GuessAssets, GuessSet, GuessType, Location, SpawnCity,
-        ValidatedGuess,
-    },
+use crate::types::{
+    BundleCity, City, CityAssets, CityNameToGuess, GuessAssets, GuessSet, GuessType, Location,
+    SpawnCity, ValidatedGuess,
 };
 
 pub struct GamePlugin;
@@ -160,9 +157,9 @@ pub fn trigger_guess_validation(
     }
 }
 
-pub struct InitGame;
+pub struct InitGamePlugin;
 
-impl Plugin for InitGame {
+impl Plugin for InitGamePlugin {
     fn build(&self, app: &mut App) {
         app.add_event::<SpawnCity>()
             .add_event::<ValidatedGuess>()

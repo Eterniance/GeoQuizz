@@ -13,7 +13,7 @@ pub use assets::AssetsPlugin;
 mod game;
 pub use game::GamePlugin;
 
-use crate::game::InitGame;
+use crate::game::InitGamePlugin;
 
 pub struct SetupPlugin;
 
@@ -22,6 +22,6 @@ impl PluginGroup for SetupPlugin {
         PluginGroupBuilder::start::<Self>()
             .add(AssetsPlugin)
             .add(MapPlugin)
-            .add(InitGame)
+            .add(InitGamePlugin)
     }
 }

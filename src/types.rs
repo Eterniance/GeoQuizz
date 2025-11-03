@@ -82,3 +82,6 @@ pub struct ValidatedGuess;
 
 #[derive(Event)]
 pub struct SpawnCity;
+
+#[derive(Component)]
+pub struct CityNameToGuess;

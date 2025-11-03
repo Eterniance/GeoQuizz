@@ -1,6 +1,9 @@
-use bevy::{color::palettes::basic::{BLACK, RED}, prelude::*};
+use bevy::{
+    color::palettes::basic::{BLACK, RED},
+    prelude::*,
+};
 
-use crate::types::{CityAssets, GuessAssets};
+use crate::types::{CityAssets, CityNameToGuess, GuessAssets};
 
 pub struct AssetsPlugin;
 
@@ -49,6 +52,3 @@ fn setup_texts(mut commands: Commands) {
             TextColor(RED.into()),
         ));
 }
-
-#[derive(Component)]
-pub struct CityNameToGuess;
