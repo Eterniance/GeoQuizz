@@ -4,9 +4,12 @@ use std::path::PathBuf;
 
 use bevy::input::mouse::MouseButtonInput;
 
-use crate::types::{
-    BundleCity, City, CityAssets, GuessAssets, GuessSet, GuessType, GuessValidated, Location,
-    SpawnCity,
+use crate::{
+    assets::CityNameToGuess,
+    types::{
+        BundleCity, City, CityAssets, GuessAssets, GuessSet, GuessType, Location, SpawnCity,
+        ValidatedGuess,
+    },
 };
 
 pub struct GamePlugin;
@@ -16,7 +19,12 @@ impl Plugin for GamePlugin {
         app.add_systems(Update, (click_to_spawn_circle, trigger_guess_validation))
             .add_systems(
                 Update,
-                (evaluate_guess, spawn_city.after(evaluate_guess)).chain(),
+                (
+                    evaluate_guess,
+                    spawn_city.after(evaluate_guess),
+                    update_guess_text.after(spawn_city),
+                )
+                    .chain(),
             );
     }
 }
@@ -90,7 +98,7 @@ fn reveal_city(
 
 fn evaluate_guess(
     mut commands: Commands,
-    mut events: EventReader<GuessValidated>,
+    mut events: EventReader<ValidatedGuess>,
     mut spawn_city_event: EventWriter<SpawnCity>,
     guess_query: Query<&GuessType>,
     anwser_query: Query<(Entity, &Name, &Location), With<City>>,
@@ -145,10 +153,10 @@ pub fn spawn_city(
 
 pub fn trigger_guess_validation(
     keyboard_input: Res<ButtonInput<KeyCode>>,
-    mut event: EventWriter<GuessValidated>,
+    mut event: EventWriter<ValidatedGuess>,
 ) {
     if keyboard_input.just_pressed(KeyCode::Space) {
-        event.write(GuessValidated);
+        event.write(ValidatedGuess);
     }
 }
 
@@ -157,7 +165,7 @@ pub struct InitGame;
 impl Plugin for InitGame {
     fn build(&self, app: &mut App) {
         app.add_event::<SpawnCity>()
-            .add_event::<GuessValidated>()
+            .add_event::<ValidatedGuess>()
             .add_systems(
                 Startup,
                 (init_guess, trigger_spawn_city.after(init_guess)).chain(),
@@ -171,4 +179,16 @@ pub fn trigger_spawn_city(mut event: EventWriter<SpawnCity>) {
 
 pub fn init_guess(mut commands: Commands) {
     commands.init_resource::<GuessSet>();
+}
+
+fn update_guess_text(
+    mut text: Query<&mut TextSpan, With<CityNameToGuess>>,
+    name: Single<&Name, With<City>>,
+    mut event: EventReader<SpawnCity>,
+) {
+    if event.read().last().is_some() {
+        for mut span in &mut text {
+            **span = format! {"{}", name.clone()}
+        }
+    }
 }

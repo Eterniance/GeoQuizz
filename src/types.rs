@@ -78,7 +78,7 @@ pub enum GuessType {
 }
 
 #[derive(Event)]
-pub struct GuessValidated;
+pub struct ValidatedGuess;
 
 #[derive(Event)]
 pub struct SpawnCity;
