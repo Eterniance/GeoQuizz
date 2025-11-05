@@ -5,13 +5,21 @@ use bevy::{
 
 use crate::types::{CityAssets, CityNameToGuess, GuessAssets};
 
+pub const DEFAULT_BORDER: Color = Color::BLACK;
+pub const DEFAULT_BG: Color = Color::srgb(0.15, 0.15, 0.15);
+
 pub struct AssetsPlugin;
 
 impl Plugin for AssetsPlugin {
     fn build(&self, app: &mut App) {
         app.add_systems(
             Startup,
-            (setup_guess_assets, setup_city_assets, setup_texts),
+            (
+                setup_guess_assets,
+                setup_city_assets,
+                setup_texts,
+                setup_button,
+            ),
         );
     }
 }
@@ -51,4 +59,48 @@ fn setup_texts(mut commands: Commands) {
             CityNameToGuess,
             TextColor(RED.into()),
         ));
+}
+
+fn setup_button(mut commands: Commands, asset_server: Res<AssetServer>) {
+    commands.spawn(button(&asset_server));
+}
+
+fn button(asset_server: &AssetServer) -> impl Bundle + use<> {
+    (
+        Node {
+            position_type: PositionType::Absolute,
+            left: Val::Percent(5.),
+            bottom: Val::Percent(10.),
+            // width: Val::Percent(100.0),
+            // height: Val::Percent(100.0),
+            align_items: AlignItems::Center,
+            justify_content: JustifyContent::Center,
+            ..default()
+        },
+        children![(
+            Button,
+            Node {
+                width: Val::Px(200.0),
+                height: Val::Px(75.0),
+                border: UiRect::all(Val::Px(5.0)),
+                // horizontally center child text
+                justify_content: JustifyContent::Center,
+                // vertically center child text
+                align_items: AlignItems::Center,
+                ..default()
+            },
+            BorderColor(Color::BLACK),
+            BorderRadius::MAX,
+            BackgroundColor(Color::srgb(0.15, 0.15, 0.15)),
+            children![(
+                Text::new("Confirm"),
+                TextFont {
+                    font: asset_server.load(r"fonts\FiraMono-Medium.ttf"),
+                    font_size: 25.0,
+                    ..default()
+                },
+                TextColor(Color::srgb(0.9, 0.9, 0.9)),
+            )]
+        )],
+    )
 }

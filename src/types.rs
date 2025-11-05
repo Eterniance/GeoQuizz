@@ -44,18 +44,31 @@ impl Default for GuessSet {
     fn default() -> Self {
         let path: PathBuf = ["database", "belgium_cities.json"].iter().collect();
         let all_cities = load_database(path).expect("Should exists");
-        let mut rng = rand::rng();
 
-        let to_guess = all_cities
-            .iter()
-            .choose_multiple(&mut rng, 10)
-            .into_iter()
-            .cloned()
-            .collect();
+        let to_guess = Self::pick_randomly(&all_cities);
         Self {
             all_cities,
             to_guess,
         }
+    }
+}
+
+impl GuessSet {
+    pub fn load_next(&mut self) {
+        let next = Self::pick_randomly(&self.all_cities);
+        self.to_guess = next;
+    }
+
+    fn pick_randomly(all_cities: &[BundleCity]) -> Vec<BundleCity> {
+        let mut rng = rand::rng();
+
+        all_cities
+            .iter()
+            .choose_multiple(&mut rng, 10)
+            .into_iter()
+            .cloned()
+            .collect()
+
     }
 }
 

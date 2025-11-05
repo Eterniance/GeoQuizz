@@ -1,19 +1,20 @@
-use bevy::prelude::*;
+use bevy::{color::palettes::basic::GREEN, input::mouse::MouseButtonInput, prelude::*};
 use bevy_svg::prelude::Origin;
 use std::path::PathBuf;
 
-use bevy::input::mouse::MouseButtonInput;
-
-use crate::types::{
-    BundleCity, City, CityAssets, CityNameToGuess, GuessAssets, GuessSet, GuessType, Location,
-    SpawnCity, ValidatedGuess,
+use crate::{
+    assets::{DEFAULT_BG, DEFAULT_BORDER},
+    types::{
+        BundleCity, City, CityAssets, CityNameToGuess, GuessAssets, GuessSet, GuessType, Location,
+        SpawnCity, ValidatedGuess,
+    },
 };
 
 pub struct GamePlugin;
 
 impl Plugin for GamePlugin {
     fn build(&self, app: &mut App) {
-        app.add_systems(Update, (click_to_spawn_circle, trigger_guess_validation))
+        app.add_systems(Update, (click_to_spawn_circle, update_button))
             .add_systems(
                 Update,
                 (
@@ -111,7 +112,7 @@ fn evaluate_guess(
                 match guess {
                     GuessType::Location(guess_pos) => {
                         let distance = guess_pos.distance(loc);
-                        println!("{} is {:.1} a.u. away from your guess!", name, distance);
+                        info!("{} is {:.1} a.u. away from your guess!", name, distance);
                         reveal_city(
                             commands,
                             asset_server,
@@ -126,10 +127,8 @@ fn evaluate_guess(
                     GuessType::Name(_) => todo!(),
                 }
             } else {
-                println!("No guess has been made yet.");
+                info!("No guess has been made yet.");
             }
-        } else {
-            println!("Multiple answers possible")
         }
         spawn_city_event.write(SpawnCity);
     }
@@ -143,17 +142,7 @@ pub fn spawn_city(
     if events.read().last().is_some()
         && let Some(city) = guess_set.to_guess.pop()
     {
-        println!("Find {}", city.name);
         commands.spawn(city.clone());
-    }
-}
-
-pub fn trigger_guess_validation(
-    keyboard_input: Res<ButtonInput<KeyCode>>,
-    mut event: EventWriter<ValidatedGuess>,
-) {
-    if keyboard_input.just_pressed(KeyCode::Space) {
-        event.write(ValidatedGuess);
     }
 }
 
@@ -186,6 +175,40 @@ fn update_guess_text(
     if event.read().last().is_some() {
         for mut span in &mut text {
             **span = format! {"{}", name.clone()}
+        }
+    }
+}
+
+fn update_button(
+    interaction_query: Query<
+        (
+            &Interaction,
+            &mut BackgroundColor,
+            &mut BorderColor,
+            &Children,
+        ),
+        (Changed<Interaction>, With<Button>),
+    >,
+    mut text_query: Query<&mut Text>,
+    mut event: EventWriter<ValidatedGuess>,
+) {
+    for (interaction, mut bg_color, mut border_color, children) in interaction_query {
+        let mut text = text_query.get_mut(children[0]).unwrap();
+        match *interaction {
+            Interaction::Pressed => {
+                *border_color = BorderColor(Color::srgb(0.12, 0.4, 0.)); 
+                *bg_color = BackgroundColor(Color::from(GREEN));
+                event.write(ValidatedGuess);
+            }
+            Interaction::Hovered => {
+                *border_color = BorderColor(Color::srgb(0.12, 0.4, 0.));
+                *bg_color = BackgroundColor(DEFAULT_BG);
+            }
+            Interaction::None => {
+                *border_color = BorderColor(DEFAULT_BORDER);
+                *bg_color = BackgroundColor(DEFAULT_BG);
+                **text = "Confirm".to_string();
+            }
         }
     }
 }
