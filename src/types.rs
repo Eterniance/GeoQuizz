@@ -101,3 +101,15 @@ pub struct CityNameToGuess;
 
 #[derive(Component)]
 pub struct WorldClickCatcher;
+
+#[derive(Resource)]
+pub enum GameState {
+    Guess,
+    Standby,
+}
+
+#[derive(Component)]
+pub enum CityState {
+    Reveal,
+    Hide,
+}
