@@ -1,9 +1,10 @@
+use crate::types::{CityAssets, CityNameToGuess, GuessAssets, WorldClickCatcher};
 use bevy::{
     color::palettes::basic::{BLACK, RED},
     prelude::*,
+    ui::FocusPolicy,
 };
-
-use crate::types::{CityAssets, CityNameToGuess, GuessAssets};
+use std::path::PathBuf;
 
 pub const DEFAULT_BORDER: Color = Color::BLACK;
 pub const DEFAULT_BG: Color = Color::srgb(0.15, 0.15, 0.15);
@@ -62,7 +63,28 @@ fn setup_texts(mut commands: Commands) {
 }
 
 fn setup_button(mut commands: Commands, asset_server: Res<AssetServer>) {
-    commands.spawn(button(&asset_server));
+    commands.spawn((
+        Node {
+            width: Val::Percent(100.0),
+            height: Val::Percent(100.0),
+            ..default()
+        },
+        children![(
+            Button,
+            Node {
+                position_type: PositionType::Absolute,
+                left: Val::Px(0.0),
+                top: Val::Px(0.0),
+                width: Val::Percent(100.0),
+                height: Val::Percent(100.0),
+                ..default()
+            },
+            BackgroundColor(Color::NONE),
+            WorldClickCatcher,
+            FocusPolicy::Pass,
+            children![button(&asset_server)]
+        )],
+    ));
 }
 
 fn button(asset_server: &AssetServer) -> impl Bundle + use<> {
@@ -92,10 +114,12 @@ fn button(asset_server: &AssetServer) -> impl Bundle + use<> {
             BorderColor(Color::BLACK),
             BorderRadius::MAX,
             BackgroundColor(Color::srgb(0.15, 0.15, 0.15)),
+            FocusPolicy::Block,
             children![(
                 Text::new("Confirm"),
                 TextFont {
-                    font: asset_server.load(r"fonts\FiraMono-Medium.ttf"),
+                    font: asset_server
+                        .load(["fonts", "FiraMono-Medium.ttf"].iter().collect::<PathBuf>()),
                     font_size: 25.0,
                     ..default()
                 },

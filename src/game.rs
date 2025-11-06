@@ -6,7 +6,7 @@ use crate::{
     assets::{DEFAULT_BG, DEFAULT_BORDER},
     types::{
         BundleCity, City, CityAssets, CityNameToGuess, GuessAssets, GuessSet, GuessType, Location,
-        SpawnCity, ValidatedGuess,
+        SpawnCity, ValidatedGuess, WorldClickCatcher,
     },
 };
 
@@ -30,6 +30,7 @@ impl Plugin for GamePlugin {
 fn click_to_spawn_circle(
     mut commands: Commands,
     mut mouse_button_input_events: EventReader<MouseButtonInput>,
+    i: Query<&Interaction, (Changed<Interaction>, With<WorldClickCatcher>)>,
     windows: Query<&Window>,
     camera_q: Query<(&Camera, &GlobalTransform)>,
     guess_assets: Res<GuessAssets>,
@@ -37,8 +38,8 @@ fn click_to_spawn_circle(
 ) {
     let window = windows.single().unwrap();
     for event in mouse_button_input_events.read() {
-        if event.button == MouseButton::Left
-            && event.state.is_pressed()
+        if let Ok(interaction) = i.single()
+            && *interaction == Interaction::Pressed
             && let Some(cursor_pos) = window.cursor_position()
         {
             let (camera, camera_transform) = camera_q.single().unwrap();
@@ -187,7 +188,7 @@ fn update_button(
             &mut BorderColor,
             &Children,
         ),
-        (Changed<Interaction>, With<Button>),
+        (Changed<Interaction>, With<Button>, Without<WorldClickCatcher>),
     >,
     mut text_query: Query<&mut Text>,
     mut event: EventWriter<ValidatedGuess>,

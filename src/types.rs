@@ -98,3 +98,6 @@ pub struct SpawnCity;
 
 #[derive(Component)]
 pub struct CityNameToGuess;
+
+#[derive(Component)]
+pub struct WorldClickCatcher;

@@ -1,8 +1,8 @@
 use bevy::math::Vec2;
-use std::f32::consts::PI;
-use std::path::Path;
+use std::{f32::consts::PI, path::Path};
 
 use crate::types::{BundleCity, City, GeoError};
+
 
 #[derive(Debug, serde::Deserialize)]
 struct OsmCity {
