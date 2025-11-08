@@ -68,7 +68,6 @@ impl GuessSet {
             .into_iter()
             .cloned()
             .collect()
-
     }
 }
 
@@ -84,17 +83,23 @@ pub struct CityAssets {
     pub material: Handle<ColorMaterial>,
 }
 
+#[derive(Resource, Eq, PartialEq)]
+pub enum GameState {
+    Guess,
+    Standby,
+}
+
+#[derive(Default, Resource)]
+pub struct Score {
+    pub total: u32,
+    pub max: u32,
+}
+
 #[derive(Component, Debug)]
 pub enum GuessType {
     Name(String),
     Location(Vec2),
 }
-
-#[derive(Event)]
-pub struct ValidatedGuess;
-
-#[derive(Event)]
-pub struct SpawnCity;
 
 #[derive(Component)]
 pub struct CityNameToGuess;
@@ -102,14 +107,17 @@ pub struct CityNameToGuess;
 #[derive(Component)]
 pub struct WorldClickCatcher;
 
-#[derive(Resource)]
-pub enum GameState {
-    Guess,
-    Standby,
-}
-
 #[derive(Component)]
 pub enum CityState {
     Reveal,
     Hide,
 }
+
+#[derive(Component)]
+pub struct ScoreText;
+
+#[derive(Event)]
+pub struct ValidatedGuess;
+
+#[derive(Event)]
+pub struct SpawnCity;

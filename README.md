@@ -8,7 +8,6 @@ Just
 ```bash
 cargo run
 ```
-To reveal a point: hit spacebar.
 
 ## Contribution
 

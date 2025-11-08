@@ -1,4 +1,4 @@
-use crate::types::{CityAssets, CityNameToGuess, GuessAssets, WorldClickCatcher};
+use crate::types::{CityAssets, CityNameToGuess, GuessAssets, Score, ScoreText, WorldClickCatcher};
 use bevy::{
     color::palettes::basic::{BLACK, RED},
     prelude::*,
@@ -46,7 +46,7 @@ fn setup_city_assets(
     commands.insert_resource(CityAssets { mesh, material });
 }
 
-fn setup_texts(mut commands: Commands) {
+fn setup_texts(mut commands: Commands, score: Res<Score>) {
     commands
         .spawn((
             // `Text` or `Text2d` are needed, and will provide default instances
@@ -58,6 +58,23 @@ fn setup_texts(mut commands: Commands) {
             // Children must be `TextSpan`, not `Text` or `Text2d`.
             TextSpan::default(),
             CityNameToGuess,
+            TextColor(RED.into()),
+        ));
+
+    commands
+        .spawn((
+            Node {
+                position_type: PositionType::Absolute,
+                right: Val::Px(5.),
+                ..default()
+            },
+            Text::new("Score: "),
+            TextColor(BLACK.into()),
+        ))
+        .with_child((
+            // Children must be `TextSpan`, not `Text` or `Text2d`.
+            TextSpan::new(format!("{}/{}", score.total, score.max)),
+            ScoreText,
             TextColor(RED.into()),
         ));
 }
