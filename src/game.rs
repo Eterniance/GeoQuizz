@@ -16,8 +16,8 @@ pub struct InitGamePlugin;
 
 impl Plugin for InitGamePlugin {
     fn build(&self, app: &mut App) {
-        app.add_event::<SpawnCity>()
-            .add_event::<ValidatedGuess>()
+        app.add_message::<SpawnCity>()
+            .add_message::<ValidatedGuess>()
             .insert_resource(GameState::Guess)
             .init_resource::<Score>()
             .add_systems(
@@ -27,7 +27,7 @@ impl Plugin for InitGamePlugin {
     }
 }
 
-pub fn trigger_spawn_city(mut ev: EventWriter<SpawnCity>) {
+pub fn trigger_spawn_city(mut ev: MessageWriter<SpawnCity>) {
     ev.write(SpawnCity);
 }
 
@@ -47,16 +47,16 @@ impl Plugin for GamePlugin {
             Update,
             (
                 despawn_city
-                    .run_if(on_event::<SpawnCity>)
+                    .run_if(on_message::<SpawnCity>)
                     .after(update_button)
                     .chain(),
-                evaluate_guess.run_if(on_event::<ValidatedGuess>),
+                evaluate_guess.run_if(on_message::<ValidatedGuess>),
                 spawn_city
-                    .run_if(on_event::<SpawnCity>)
+                    .run_if(on_message::<SpawnCity>)
                     .after(despawn_city)
                     .chain(),
                 update_guess_text
-                    .run_if(on_event::<SpawnCity>)
+                    .run_if(on_message::<SpawnCity>)
                     .after(spawn_city),
             )
                 .chain(),
@@ -216,8 +216,8 @@ fn update_button(
         ),
     >,
     mut text_query: Query<&mut Text>,
-    mut guess_event: EventWriter<ValidatedGuess>,
-    mut spawn_event: EventWriter<SpawnCity>,
+    mut guess_event: MessageWriter<ValidatedGuess>,
+    mut spawn_event: MessageWriter<SpawnCity>,
     mut game_state: ResMut<GameState>,
 ) {
     for (interaction, mut bg_color, mut border_color, children) in interaction_query {
