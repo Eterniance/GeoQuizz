@@ -128,7 +128,7 @@ fn button(asset_server: &AssetServer) -> impl Bundle + use<> {
                 align_items: AlignItems::Center,
                 ..default()
             },
-            BorderColor(Color::BLACK),
+            BorderColor::all(Color::BLACK),
             BorderRadius::MAX,
             BackgroundColor(Color::srgb(0.15, 0.15, 0.15)),
             FocusPolicy::Block,

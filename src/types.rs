@@ -116,8 +116,8 @@ pub enum CityState {
 #[derive(Component)]
 pub struct ScoreText;
 
-#[derive(Event)]
+#[derive(Message)]
 pub struct ValidatedGuess;
 
-#[derive(Event)]
+#[derive(Message)]
 pub struct SpawnCity;

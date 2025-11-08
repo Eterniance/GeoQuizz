@@ -224,7 +224,7 @@ fn update_button(
         let mut text = text_query.get_mut(children[0]).unwrap();
         match *interaction {
             Interaction::Pressed => {
-                *border_color = BorderColor(Color::srgb(0.12, 0.4, 0.));
+                *border_color = BorderColor::all(Color::srgb(0.12, 0.4, 0.));
                 *bg_color = BackgroundColor(Color::from(GREEN));
                 if *game_state == GameState::Guess {
                     **text = "Continue".to_string();
@@ -236,11 +236,11 @@ fn update_button(
                 }
             }
             Interaction::Hovered => {
-                *border_color = BorderColor(Color::srgb(0.12, 0.4, 0.));
+                *border_color = BorderColor::all(Color::srgb(0.12, 0.4, 0.));
                 *bg_color = BackgroundColor(DEFAULT_BG);
             }
             Interaction::None => {
-                *border_color = BorderColor(DEFAULT_BORDER);
+                *border_color = BorderColor::all(DEFAULT_BORDER);
                 *bg_color = BackgroundColor(DEFAULT_BG);
                 if *game_state == GameState::Guess {
                     **text = "Confirm".to_string();

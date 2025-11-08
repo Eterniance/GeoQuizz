@@ -4,8 +4,8 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
-bevy = { version = "0.16" }
-bevy_svg = { version = "0.16.0-rc1", default-features = false, features = ["2d","3d"] }
+bevy = { version = "0.17" }
+bevy_svg = { version = "0.17.1", default-features = false, features = ["2d","3d"] }
 rand = "0.9.2"
 serde = "1.0.228"
 serde_json = "1.0"

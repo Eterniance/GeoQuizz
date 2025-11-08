@@ -1,4 +1,4 @@
-use bevy::core_pipeline::core_2d::Camera2d;
+use bevy::camera::Camera2d;
 use bevy::prelude::*;
 use bevy_svg::prelude::*;
 // use bevy::input::mouse::{MouseScrollUnit, MouseWheel};
