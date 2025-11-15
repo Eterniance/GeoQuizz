@@ -31,7 +31,7 @@ fn setup(mut commands: Commands, asset_server: Res<AssetServer>) {
     ));
 }
 
-// pub fn camera_zoom_system(
+// fn camera_zoom_system(
 //     mut evr_scroll: EventReader<MouseWheel>,
 //     mut camera: Query<(Option<Mut<Projection>>, Mut<Transform>), With<Camera>>,
 // ) {

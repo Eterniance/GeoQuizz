@@ -1,4 +1,4 @@
-use bevy::{color::palettes::basic::GREEN, prelude::*};
+use bevy::{camera::prelude::Visibility, color::palettes::basic::GREEN, input::keyboard::KeyboardInput, prelude::*};
 use bevy_svg::prelude::Origin;
 use std::path::PathBuf;
 
@@ -27,11 +27,11 @@ impl Plugin for InitGamePlugin {
     }
 }
 
-pub fn trigger_spawn_city(mut ev: MessageWriter<SpawnCity>) {
+fn trigger_spawn_city(mut ev: MessageWriter<SpawnCity>) {
     ev.write(SpawnCity);
 }
 
-pub fn init_guess(mut commands: Commands) {
+fn init_guess(mut commands: Commands) {
     commands.init_resource::<GuessSet>();
 }
 
@@ -83,7 +83,7 @@ fn click_to_spawn_circle(
             .unwrap();
         if let Ok((entity, mut transform)) = existing_circle.single_mut() {
             // Move the existing circle
-            transform.translation = world_pos.extend(0.0);
+            transform.translation = world_pos.extend(0.1);
             commands
                 .entity(entity)
                 .insert(GuessType::Location(world_pos));
@@ -91,7 +91,7 @@ fn click_to_spawn_circle(
             commands.spawn((
                 Mesh2d(guess_assets.mesh.clone()),
                 MeshMaterial2d(guess_assets.material.clone()),
-                Transform::from_translation(world_pos.extend(0.0)),
+                Transform::from_translation(world_pos.extend(0.1)),
                 GuessType::Location(world_pos),
             ));
         }
@@ -110,7 +110,8 @@ fn evaluate_guess(
             match guess {
                 GuessType::Location(guess_pos) => {
                     let distance = guess_pos.distance(loc) as u32;
-                    let points = MAX_POINTS.saturating_sub(distance);
+                    let points = calculate_score(distance, MAX_POINTS);
+                    info!("Distance: {distance}, given points: {points}");
                     score.total += points;
                     score.max += MAX_POINTS;
 
@@ -126,7 +127,12 @@ fn evaluate_guess(
     }
 }
 
-pub fn spawn_city(
+fn calculate_score(distance: u32, max: u32) -> u32 {
+    let scaled = distance.saturating_sub(5).clamp(0, 400) / 4;
+    max.saturating_sub(scaled)
+}
+
+fn spawn_city(
     mut commands: Commands,
     mut guess_set: ResMut<GuessSet>,
     asset_server: Res<AssetServer>,
@@ -141,8 +147,12 @@ pub fn spawn_city(
 
         commands.spawn((
             city.clone(),
-            Transform::from_translation(location.extend(0.0)),
-            Visibility::Hidden,
+            Transform::from_translation(location.extend(0.1)),
+            if cfg!(feature = "debug") {
+                Visibility::Visible
+            } else {
+                Visibility::Hidden
+            },
             children![(
                 Mesh2d(city_assets.mesh.clone()),
                 MeshMaterial2d(city_assets.material.clone()),
@@ -160,7 +170,7 @@ pub fn spawn_city(
                     Transform::from_translation(Vec3 {
                         x: 15.,
                         y: 15.,
-                        z: 0.
+                        z: 0.1
                     }),
                     Origin::Center,
                 )]
@@ -176,7 +186,6 @@ fn despawn_city(
     query: Query<Entity, With<City>>,
 ) {
     if *game_state == GameState::Guess {
-        error!("Wrong game state");
         return;
     }
     if let Ok(entity) = query.single() {
@@ -215,6 +224,7 @@ fn update_button(
             Without<WorldClickCatcher>,
         ),
     >,
+    keyboard: MessageReader<KeyboardInput>,
     mut text_query: Query<&mut Text>,
     mut guess_event: MessageWriter<ValidatedGuess>,
     mut spawn_event: MessageWriter<SpawnCity>,
@@ -251,3 +261,5 @@ fn update_button(
         }
     }
 }
+
+// fn switch_button_state() {}

@@ -11,6 +11,9 @@ serde = "1.0.228"
 serde_json = "1.0"
 thiserror = "2"
 
+[features]
+debug = [] # Shows city points
+
 [lints.clippy]
 type_complexity = "allow"
 
