@@ -1,4 +1,7 @@
-use bevy::{camera::prelude::Visibility, color::palettes::basic::GREEN, input::keyboard::KeyboardInput, prelude::*};
+use bevy::{
+    camera::prelude::Visibility, color::palettes::basic::GREEN, input::keyboard::KeyboardInput,
+    prelude::*,
+};
 use bevy_svg::prelude::Origin;
 use std::path::PathBuf;
 
@@ -6,7 +9,7 @@ use crate::{
     assets::{DEFAULT_BG, DEFAULT_BORDER},
     types::{
         City, CityAssets, CityNameToGuess, GameState, GuessAssets, GuessSet, GuessType, Location,
-        Score, ScoreText, SpawnCity, ValidatedGuess, WorldClickCatcher,
+        NewGame, Score, ScoreText, SpawnCity, ValidatedGuess, WorldClickCatcher,
     },
 };
 
@@ -18,6 +21,7 @@ impl Plugin for InitGamePlugin {
     fn build(&self, app: &mut App) {
         app.add_message::<SpawnCity>()
             .add_message::<ValidatedGuess>()
+            .add_message::<NewGame>()
             .insert_resource(GameState::Guess)
             .init_resource::<Score>()
             .add_systems(
@@ -48,20 +52,27 @@ impl Plugin for GamePlugin {
             (
                 despawn_city
                     .run_if(on_message::<SpawnCity>)
-                    .after(update_button)
-                    .chain(),
+                    .after(update_button),
+                spawn_city.run_if(on_message::<SpawnCity>),
                 evaluate_guess.run_if(on_message::<ValidatedGuess>),
-                spawn_city
-                    .run_if(on_message::<SpawnCity>)
-                    .after(despawn_city)
-                    .chain(),
                 update_guess_text
                     .run_if(on_message::<SpawnCity>)
                     .after(spawn_city),
+                reset_game.run_if(on_message::<NewGame>).after(spawn_city),
             )
                 .chain(),
         );
     }
+}
+
+fn reset_game(
+    mut score: ResMut<Score>,
+    mut guess_set: ResMut<GuessSet>,
+    mut spawn_writer: MessageWriter<SpawnCity>,
+) {
+    guess_set.load_next();
+    score.reset();
+    spawn_writer.write(SpawnCity);
 }
 
 fn click_to_spawn_circle(
@@ -135,6 +146,7 @@ fn calculate_score(distance: u32, max: u32) -> u32 {
 fn spawn_city(
     mut commands: Commands,
     mut guess_set: ResMut<GuessSet>,
+    mut new_game_event: MessageWriter<NewGame>,
     asset_server: Res<AssetServer>,
     city_assets: Res<CityAssets>,
 ) {
@@ -176,7 +188,8 @@ fn spawn_city(
                 )]
             )],
         ));
-        info!("city spawned");
+    } else {
+        new_game_event.write(NewGame);
     }
 }
 

@@ -3,7 +3,6 @@ use std::{f32::consts::PI, path::Path};
 
 use crate::types::{BundleCity, City, GeoError};
 
-
 #[derive(Debug, serde::Deserialize)]
 struct OsmCity {
     #[serde(rename = "name:default")]

@@ -36,8 +36,8 @@ pub struct BundleCity {
 
 #[derive(Debug, Resource)]
 pub struct GuessSet {
-    all_cities: Vec<BundleCity>,
     pub to_guess: Vec<BundleCity>,
+    all_cities: Vec<BundleCity>,
 }
 
 impl Default for GuessSet {
@@ -93,6 +93,17 @@ pub enum GameState {
 pub struct Score {
     pub total: u32,
     pub max: u32,
+    pub best: u32,
+}
+
+impl Score {
+    pub fn reset(&mut self) {
+        if self.best < self.total {
+            self.best = self.total;
+        }
+        self.total = 0;
+        self.max = 0;
+    }
 }
 
 #[derive(Component, Debug)]
@@ -115,6 +126,9 @@ pub enum CityState {
 
 #[derive(Component)]
 pub struct ScoreText;
+
+#[derive(Message)]
+pub struct NewGame;
 
 #[derive(Message)]
 pub struct ValidatedGuess;
